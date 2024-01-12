@@ -3,25 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground: rgb(255, 255, 255);
+  --background: rgb(29, 29, 29);
+  --header-height: 70px;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground: rgb(255, 255, 255);
+    --background: rgb(29, 29, 29);
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  color: #0466f9;
+}
+a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(123, 123, 123, 0.2);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0px;
+  height: 1px;
+  transition: 0.4s ease-out;
+  background-color: #0466f9;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a[data-noline='true']::before {
+  content: '';
+  background-color: transparent !important;
+}
+a[data-noline='true']:hover::after {
+  width: 0 !important;
 }

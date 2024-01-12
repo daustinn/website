@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+<a href="https://www.pheralb.dev/" target="_blank">
+<img src="public/screenshot.png" alt="Screenshot" />
+</a>
 
-First, run the development server:
+</p>
+
+<div align="center">
+    <a href="https://daustinn.com" target="_blank">
+        Website
+    </a>
+    <span>&nbsp;⁘&nbsp;</span>
+    <a href="#-getting-started">
+        Getting Started
+    </a>
+    <span>&nbsp;⁘&nbsp;</span>
+    <a href="#-stack">
+        Stack
+    </a>
+    <span>&nbsp;⁘&nbsp;</span>
+    <a href="https://twitter.com/daustinndev" target="_blank">
+        Twitter
+    </a>
+</div>
+
+</p>
+
+</div>
+
+## ⚙ Stack
+
+- [**Nextjs 14** + Typescript](https://nextjs.org/) - Build the web
+  you want.
+- [**Tailwind CSS**](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
+- [**Prettier** + prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) - A Prettier plugin for Tailwind CSS that automatically sorts classes.
+
+## 🚀 Getting Started
+
+We recommend using the following extensions for Visual Studio Code:
+
+- [**Tailwind CSS IntelliSense**](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
+- [**PostCSS Language Support**](https://marketplace.visualstudio.com/items?itemName=csstools.postcss).
+- [**Prettier - Code formatter**](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
+
+1. Clone the repository:
 
 ```bash
-npm run dev
+git@github.com:daustinn/website.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+ultra install
+```
+
+3. Run the development server:
+
+```bash
+npm next dev
 # or
 yarn dev
 # or
-pnpm dev
+pnpm next dev
 # or
-bun dev
+ultra dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open up [http://localhost:3000](http://localhost:3000) to view the website 🚀.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I am using [**Vercel**](https://vercel.com/) for deployment:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [**daustinn.com**](https://daustinn.com).
+- [**daustinn.vercel.app**](https://daustinn.vercel.app).
