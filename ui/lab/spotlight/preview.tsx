@@ -10,7 +10,7 @@ export function SpotlightPreview() {
       to="/lab/spotlight"
       className="grid h-[200px] place-content-center"
     >
-      <h2 className="text-center text-lg font-semibold mb-4 text-stone-500">
+      <h2 className="text-center text-lg font-semibold mb-4 text-stone-600 dark:text-stone-400">
         <span className="font-bold">Spotlight</span>
       </h2>
       <Spotlight

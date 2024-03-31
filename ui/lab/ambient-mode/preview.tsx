@@ -12,7 +12,7 @@ export function AmbientModePreview() {
       <span className="mx-auto">
         <ToggleTheme />
       </span>
-      <h2 className="text-center text-lg font-semibold mb-4 text-stone-500">
+      <h2 className="text-center text-lg font-semibold mb-4 text-stone-600 dark:text-stone-400">
         <span className="font-bold">Ambient mode only Dark mode</span>
       </h2>
       <div className="flex items-center justify-center">
