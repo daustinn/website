@@ -24,16 +24,16 @@ export const metadata: Metadata = {
     images: {
       hash: 'og-image-lab-drawer',
       host: 'https://daustinn.com',
-      pathname: '/og/drawer.webp',
+      pathname: '/og/switch.webp',
       hostname: 'daustinn.com',
-      href: 'https://daustinn.com/og/drawer.webp',
+      href: 'https://daustinn.com/og/switch.webp',
       origin: 'https://daustinn.com',
       protocol: 'https:',
       searchParams: new URLSearchParams(),
-      url: 'https://daustinn.com/og/drawer.webp',
+      url: 'https://daustinn.com/og/switch.webp',
       alt: 'Drawer',
       height: 630,
-      secureUrl: 'https://daustinn.com/og/drawer.webp',
+      secureUrl: 'https://daustinn.com/og/switch.webp',
       type: 'image/webp',
       width: 1200
     }
