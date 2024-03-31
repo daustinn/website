@@ -10,31 +10,6 @@ const DosisSans = Sarabun({
 })
 
 export const metadata: Metadata = {
-  title: 'David Bendezú (Daustinn) - Software Engineer',
-  description:
-    'Software Engineer based in Lima, Perú with a passion for web development and open source software. I specialize in building high-quality websites and applications.',
-  keywords: [
-    'David Bendezú',
-    'Daustinn',
-    'Software Engineer',
-    'Web Developer',
-    'Open Source',
-    'React',
-    'Next.js',
-    'Node.js',
-    'JavaScript',
-    'TypeScript',
-    'CSS',
-    'HTML',
-    'Web Development',
-    'Frontend Development',
-    'Backend Development',
-    'Fullstack Development',
-    'Lima',
-    'Perú'
-  ],
-  abstract:
-    'Software Engineer based in Lima, Perú with a passion for web development and open source software.',
   alternates: {
     canonical: 'https://daustinn.com',
     languages: {
@@ -43,7 +18,7 @@ export const metadata: Metadata = {
     },
     types: { html: 'text/html' }
   },
-  category: 'Software Development',
+  category: 'Front-End Developer and UI Designer',
   creator: 'David Bendezú',
   icons: './favicon.svg',
   authors: {
