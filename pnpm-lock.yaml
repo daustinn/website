@@ -26,6 +26,9 @@ dependencies:
   '@radix-ui/react-portal':
     specifier: ^1.0.4
     version: 1.0.4(@types/react-dom@18.2.22)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)
+  clsx:
+    specifier: ^2.1.0
+    version: 2.1.0
   framer-motion:
     specifier: ^11.0.23
     version: 11.0.24(react-dom@18.2.0)(react@18.2.0)
