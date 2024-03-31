@@ -1,7 +1,7 @@
 import { ArrowNextIcon } from 'icons'
 import Link from 'next/link'
 import React from 'react'
-import { AmbientModePreview, TimePickerPreview } from 'ui/lab'
+import { SwitchPreview, TimePickerPreview } from 'ui/lab'
 
 export function LatestLab() {
   return (
@@ -18,7 +18,7 @@ export function LatestLab() {
           </Link>
         </div>
         <TimePickerPreview />
-        <AmbientModePreview />
+        <SwitchPreview />
         <div className="text-center">
           <Link
             href="/lab"
