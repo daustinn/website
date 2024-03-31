@@ -4,12 +4,11 @@ import { ContentSwitch } from './content'
 import { HeaderItem } from 'ui/components/lab/header-item'
 
 export const metadata: Metadata = {
-  title: 'Drawer',
-  description: 'Drawer page in the lab section of Daustinn.',
+  title: 'Switch',
+  description: 'Switch page in the lab section of Daustinn.',
   keywords: [
     'lab',
-    'drawer',
-    'vaul',
+    'switch',
     'react',
     'tailwindcss',
     'nextjs',
@@ -19,10 +18,10 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    title: 'Drawer',
-    description: 'Drawer page in the lab section of Daustinn.',
+    title: 'switch',
+    description: 'switch page in the lab section of Daustinn.',
     images: {
-      hash: 'og-image-lab-drawer',
+      hash: 'og-image-lab-switch',
       host: 'https://daustinn.com',
       pathname: '/og/switch.webp',
       hostname: 'daustinn.com',
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
       protocol: 'https:',
       searchParams: new URLSearchParams(),
       url: 'https://daustinn.com/og/switch.webp',
-      alt: 'Drawer',
+      alt: 'Switch',
       height: 630,
       secureUrl: 'https://daustinn.com/og/switch.webp',
       type: 'image/webp',
