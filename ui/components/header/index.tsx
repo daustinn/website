@@ -21,7 +21,7 @@ export function Header() {
             David Bendezú (Daustinn)
           </h2>
           <p className="max-w-[50ch] dark:text-stone-400 text-stone-700">
-            Front-End Developer and UI Designer
+            Full Stack Developer and UI Designer
           </p>
         </div>
       </div>
