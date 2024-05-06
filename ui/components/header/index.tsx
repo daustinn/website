@@ -9,7 +9,7 @@ export function Header() {
           <Image
             width={64}
             height={64}
-            src="/profile.webp"
+            src="/profile.2.webp"
             className="w-full h-full object-cover"
             alt="David Bendezú profile picture"
             title="David Bendezú profile picture"
