@@ -12,7 +12,7 @@ export function Connect() {
             Github
             <a
               title="Github profile of daustinn"
-              href="https://github/daustinn"
+              href="https://github.com/daustinn"
               target="_blank"
               rel="noreferrer"
               className="hover:underline dark:text-white/90 text-black ml-5 inline-block"
@@ -24,8 +24,8 @@ export function Connect() {
           <p>
             Twitter
             <a
-              title="Twitter profile of @daustinndev"
-              href="https://github.com/daustinn"
+              title="X profile of @daustinndev"
+              href="https://x.com/daustinndev"
               target="_blank"
               rel="noreferrer"
               className="hover:underline dark:text-white/90 text-black ml-5 inline-block"
