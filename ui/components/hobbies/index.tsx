@@ -33,7 +33,7 @@ export function Hobbies() {
             </a>
           </p>
           <p>
-            I got 953,648 views on my artistic{' '}
+            I got 1,003,535 views on my artistic{' '}
             <a
               href="https://www.youtube.com/@daustinnmusic"
               title="YouTube channel"
