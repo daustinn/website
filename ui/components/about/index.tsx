@@ -1,25 +1,54 @@
+import { conections, seoTecnologies } from 'const'
+import { getTranslations } from 'next-intl/server'
 import React from 'react'
 
-export function About() {
+export async function About({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale })
   return (
-    <section className="mt-10 px-10 space-y-10 max-w-2xl max-lg:max-w-full mx-auto w-full">
-      <article className="space-y-2 animate-fade-in-down [animation-delay:100ms]">
-        <h2 className="font-semibold text-xl">About me</h2>
-        <p className="text-stone-700 dark:text-stone-300 font-medium">
-          More than 3 years creating beautiful and minimalist websites and
-          applications with the latest technologies.
+    <section className="px-4 space-y-10 max-w-2xl mx-auto w-full">
+      <article className="space-y-3 [&>p>a]:opacity-90 dark:[&>p>a]:opacity-70 hover:[&>p>a]:opacity-100 hover:[&>p>a]:underline">
+        <h2 className="font-semibold py-2">{t('about.title')}</h2>
+        <p className="dark:opacity-80">
+          {t('about.description_0')}
+          <a {...seoTecnologies.nodejs}>Node.js</a>,{' '}
+          <a {...seoTecnologies.typescript}>TypeScript</a>,{' '}
+          <a {...seoTecnologies.react}>React</a>,{' '}
+          <a {...seoTecnologies.nextjs}>Next.js</a> {t('global.and')}{' '}
+          <a {...seoTecnologies.astro}>Astro</a>, {t('global.along_with')}{' '}
+          <a {...seoTecnologies.php}>PHP</a> {t('global.using')}{' '}
+          <a {...seoTecnologies.laravel}>Laravel</a>.
         </p>
-      </article>
-      <article className="space-y-2 animate-fade-in-down [animation-delay:200ms]">
-        <h2 className="font-semibold text-xl">Now</h2>
-        <p className="text-stone-700 dark:text-stone-300 font-medium">
-          Right now, {"I'm"} focused on improving my freelance business. I spend
-          more time sharing my work online and honing my design skills.
+        <p className="dark:opacity-80">
+          {t('about.description_1')} <a {...seoTecnologies.mongodb}>MongoDB</a>,{' '}
+          <a {...seoTecnologies.postgresql}>PostgreSQL</a>,{' '}
+          <a {...seoTecnologies.mysql}>MySQL</a>,{' '}
+          <a {...seoTecnologies.sqlite}>SQLite</a>, {t('global.and')}{' '}
+          <a {...seoTecnologies.redis}>Redis</a>, {t('about.description_2')}{' '}
         </p>
-        <p className="text-stone-700 dark:text-stone-300 font-medium">
-          Additionally, I am exploring new projects and looking for
-          opportunities to expand my work.
+        <p className="dark:opacity-80">
+          {t('about.description_3')} <a {...seoTecnologies.git}>Git</a>{' '}
+          {t('global.and')} <a {...seoTecnologies.github}>GitHub</a>{' '}
+          {t('about.description_4')}{' '}
         </p>
+        <footer className="flex items-center hover:[&>a]:dark:text-blue-600 hover:[&>a]:text-blue-600 hover:[&>a]:opacity-100 py-1 gap-4">
+          {conections.map((conection, key) => (
+            <a
+              href={conection.href}
+              target={conection.href ? '_blank' : '_self'}
+              className="opacity-70"
+              title={conection.title}
+              key={key}
+              rel="noreferrer"
+            >
+              <conection.icon size={20} />
+            </a>
+          ))}
+        </footer>
+        <footer>
+          <p className="text-sm opacity-70 dark:opacity-50">
+            {t('about.about_ubdated')}
+          </p>
+        </footer>
       </article>
     </section>
   )
