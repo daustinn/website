@@ -1,0 +1,61 @@
+{
+  "header": {
+    "language": {
+      "title": "Choose a language",
+      "description": "Select the language you want to use."
+    }
+  },
+  "home": {
+    "banner": "Full Stack Developer"
+  },
+  "about": {
+    "title": "About me",
+    "description_0": "Full Stack developer with more than 3 years of experience creating high-quality, minimalist websites and applications. I specialize in JavaScript technologies such as",
+    "description_1": "I am skilled in managing databases such as",
+    "description_2": "ensuring scalable and efficient solutions for various projects.",
+    "description_3": "Additionally, I handle server deployments on AWS and dedicated Linux servers, and I am proficient with",
+    "description_4": "for seamless version control and collaboration.",
+    "about_ubdated": "Updated on October 10, 2024"
+  },
+  "projects": {
+    "title": "Personal projects",
+    "list": {
+      "nanui": {
+        "title": "Nan UI",
+        "description": "Components designed so you can copy and paste into your React and Next.js apps"
+      },
+      "apigraph": {
+        "title": "API Graph",
+        "description": "Mockup APIs and GraphQL for frontend developers"
+      }
+    }
+  },
+  "experiences": {
+    "title": "Featured experiences",
+    "list": {
+      "airzel": {
+        "title": "Airzel",
+        "description": "CEO and co-founder"
+      },
+      "la-pontificia": {
+        "title": "La Pontificia",
+        "description": "Fullstack Developer, Next.js and Laravel"
+      },
+      "nueva-acropolis": {
+        "title": "Nueva Acrópolis",
+        "description": "Fullstack Developer, React.js & Firebase"
+      }
+    }
+  },
+  "global": {
+    "and": "and",
+    "along_with": "along with",
+    "using": "using"
+  },
+  "footer": {
+    "deployed_on": "Deployed on",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

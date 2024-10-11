@@ -1,0 +1,61 @@
+{
+  "header": {
+    "language": {
+      "title": "Elige un idioma",
+      "description": "Selecciona el idioma que deseas usar."
+    }
+  },
+  "home": {
+    "banner": "Desarrollador Full Stack"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description_0": "Desarrollador Full Stack con más de 3 años de experiencia creando sitios web y aplicaciones minimalistas de alta calidad. Me especializo en tecnologías JavaScript como ",
+    "description_1": "Tengo habilidades en el manejo de bases de datos como",
+    "description_2": "asegurando soluciones escalables y eficientes para diversos proyectos.",
+    "description_3": "Además, manejo implementaciones de servidores en AWS y servidores Linux dedicados, y soy competente con",
+    "description_4": "para un control de versiones y colaboraciones perfectas.",
+    "about_ubdated": "Actualizado el 10 de octubre de 2024"
+  },
+  "projects": {
+    "title": "Proyectos personales",
+    "list": {
+      "nanui": {
+        "title": "Nan UI",
+        "description": "Componentes diseñados que puedes copiar y pegar en tus aplicaciones React y Next.js"
+      },
+      "apigraph": {
+        "title": "API Graph",
+        "description": "APIs y GraphQL de mockup para desarrolladores frontend"
+      }
+    }
+  },
+  "experiences": {
+    "title": "Experiencias destacadas",
+    "list": {
+      "airzel": {
+        "title": "Airzel",
+        "description": "CEO y cofundador"
+      },
+      "la-pontificia": {
+        "title": "La Pontificia",
+        "description": "Desarrollador Fullstack, Next.js, Laravel, MySQL y MongoDB"
+      },
+      "nueva-acropolis": {
+        "title": "Nueva Acrópolis",
+        "description": "Desarrollador Fullstack, React.js y Firebase"
+      }
+    }
+  },
+  "global": {
+    "and": "y",
+    "along_with": "junto con",
+    "using": "usando"
+  },
+  "footer": {
+    "deployed_on": "Desplegado en",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  }
+}
