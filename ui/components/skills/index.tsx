@@ -100,8 +100,8 @@ export function Skills() {
     <section className="mt-10 space-y-10">
       <article className="space-y-2 animate-fade-in-down [animation-delay:300ms]">
         <div className="ml-5 flex relative justify-center dark:text-stone-300 overflow-y-hidden">
-          <div className="bg-gradient-to-l from-transparent via-[#efefef]/80 dark:via-[#0e0d0b]/80 to-[#efefef] dark:to-[#0e0d0b] pointer-events-none select-none absolute left-0 z-10 w-[200px] h-full" />
-          <div className="bg-gradient-to-r from-transparent via-[#efefef]/80 dark:via-[#0e0d0b]/80 to-[#efefef] dark:to-[#0e0d0b] pointer-events-none select-none absolute right-0 z-10 w-[200px] h-full" />
+          <div className="bg-gradient-to-l from-transparent dark:via-[#0b0b0b]/80 to-white dark:to-[#0b0b0b] pointer-events-none select-none absolute left-0 z-10 w-[200px] h-full" />
+          <div className="bg-gradient-to-r from-transparent dark:via-[#0b0b0b]/80 to-white dark:to-[#0b0b0b] pointer-events-none select-none absolute right-0 z-10 w-[200px] h-full" />
           <div className="skills-container py-5 overflow-x-auto px-20 flex gap-20 hidden-scroll">
             {skills.map((skill, index) => (
               <Skill key={index} {...skill} />

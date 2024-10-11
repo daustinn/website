@@ -19,7 +19,7 @@ const Skill = ({ icon, title, className, href }: SkillType) => {
         className
       )}
     >
-      <div className="w-10 mx-auto drop-shadow-lg">{icon}</div>
+      <div className="w-8 mx-auto drop-shadow-lg">{icon}</div>
       <p className="text-xs mt-2">{title}</p>
     </a>
   )
