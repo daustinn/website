@@ -1,30 +1,31 @@
-import Image from 'next/image'
 import React from 'react'
+import { Language } from './language'
+import { getTranslations } from 'next-intl/server'
 
-export function Header() {
+export async function Header({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale })
   return (
-    <header className="border-stone-300 animate-fade-in-down">
-      <div className="max-w-2xl max-lg:max-w-full px-10 flex mx-auto w-full items-center gap-4">
-        <div className="w-16 border dark:border-stone-800 border-stone-200 rounded-full overflow-hidden aspect-square">
-          <Image
-            width={64}
-            height={64}
-            src="/profile.2.webp"
-            className="w-full h-full object-cover"
-            alt="David Bendezú profile picture"
-            title="David Bendezú profile picture"
-          />
-        </div>
-
-        <div>
+    <header className="border-stone-300 max-w-2xl mx-auto w-full p-4 flex justify-between items-center">
+      <nav className="flex flex-grow text-lg basis-0">
+        <h1 className="font-medium text-nowrap tracking-tight">
+          Daustinn
+          <span className="font-normal opacity-50 inline-block pl-1">
+            {t('home.banner')}
+          </span>
+        </h1>
+      </nav>
+      <nav className="flex items-center">{/* <a href="">Nanui</a> */}</nav>
+      <nav className="flex flex-grow justify-end basis-0 gap-4">
+        <Language />
+      </nav>
+      {/* <div>
           <h2 className="font-semibold text-lg dark:text-white">
             David Bendezú (Daustinn)
           </h2>
           <p className="max-w-[50ch] dark:text-stone-400 text-stone-700">
-            Full Stack Developer and UI Designer
+            Full Stack Developer
           </p>
-        </div>
-      </div>
+        </div> */}
     </header>
   )
 }
