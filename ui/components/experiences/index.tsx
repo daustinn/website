@@ -1,36 +1,39 @@
-import { ExternalIcon } from 'icons'
+import { experiences } from 'const'
+import { getTranslations } from 'next-intl/server'
 import React from 'react'
+import { MdArrowOutward } from 'react-icons/md'
 
-export function Experiences() {
+export async function Experiences({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale })
   return (
-    <section className="mt-10 px-10 space-y-10 max-w-2xl max-lg:max-w-full mx-auto w-full">
-      <article className="space-y-2 animate-fade-in-down [animation-delay:100ms]">
-        <h2 className="font-semibold text-xl">Featured experiences</h2>
-        <div className="dark:text-stone-400 text-stone-600 font-medium space-y-2">
-          <a
-            href="https://ci.ilp.edu.pe"
-            target="_blank"
-            title="Information Center La Pontificia - Fullstack Developer"
-            rel="noreferrer"
-            className="hover:underline block"
-          >
-            <b>2023 - Actuality</b>: Information Center La Pontificia -
-            Fullstack Developer
-            <ExternalIcon className="w-5 inline-block" />
-          </a>
-          <a
-            title="Payment Administration Nueva Acropolis - Fullstack Developer"
-            href="https://ayacuchoacropolis1.com"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:underline block"
-          >
-            <b>2022 - 2023</b>: Payment Administration Nueva Acropolis -
-            Fullstack Developer
-            <ExternalIcon className="w-5 inline-block" />
-          </a>
-        </div>
-      </article>
-    </section>
+    <>
+      <section className="px-4 space-y-10 mt-6 max-w-2xl mx-auto w-full">
+        <article className="space-y-3">
+          <h2 className="font-semibold py-2">{t('experiences.title')}</h2>
+          <ul className="flex flex-col gap-2">
+            {experiences.map((experience, key) => (
+              <a
+                href={experience.href ?? '#'}
+                target={experience.href ? '_blank' : '_self'}
+                rel="noopener noreferrer"
+                key={key}
+                className="group"
+              >
+                <h2 className="group-hover:underline font-medium">
+                  {t(`experiences.list.${experience.id}.title`)}
+                  <MdArrowOutward
+                    size={15}
+                    className="inline-block group-hover:dark:text-blue-600 group-hover:text-blue-500 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform ml-1 dark:opacity-50 opacity-70"
+                  />
+                </h2>
+                <p className="opacity-80">
+                  {t(`experiences.list.${experience.id}.description`)}
+                </p>
+              </a>
+            ))}
+          </ul>
+        </article>
+      </section>
+    </>
   )
 }
