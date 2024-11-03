@@ -26,6 +26,11 @@ export const conections = [
     title: 'Email me at',
     username: '',
     href: 'mailto:daustinn.dev@gmail.com'
+  },
+  {
+    title: 'My Resume',
+    username: '',
+    href: '/resume.pdf'
   }
 ]
 
@@ -127,8 +132,8 @@ export const projects = [
     href: 'https://nanui.daustinn.com'
   },
   {
-    id: 'apigraph',
-    href: 'https://apigraph.daustinn.com'
+    id: 'graphi',
+    href: 'https://graphi.daustinn.com'
   }
 ]
 
