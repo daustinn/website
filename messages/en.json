@@ -15,7 +15,7 @@
     "description_2": "ensuring scalable and efficient solutions for various projects.",
     "description_3": "Additionally, I handle server deployments on AWS and dedicated Linux servers, and I am proficient with",
     "description_4": "for seamless version control and collaboration.",
-    "about_ubdated": "Updated on October 10, 2024"
+    "about_ubdated": "Updated on November 2, 2024"
   },
   "projects": {
     "title": "Personal projects",
@@ -24,8 +24,8 @@
         "title": "Nan UI",
         "description": "Components designed so you can copy and paste into your React and Next.js apps"
       },
-      "apigraph": {
-        "title": "API Graph",
+      "graphi": {
+        "title": "Graphi",
         "description": "Mockup APIs and GraphQL for frontend developers"
       }
     }
