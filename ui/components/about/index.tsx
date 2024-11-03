@@ -40,7 +40,8 @@ export async function About({ locale }: { locale: string }) {
               key={key}
               rel="noreferrer"
             >
-              <conection.icon size={20} />
+              {!conection.icon && conection.title}
+              {conection.icon && <conection.icon size={20} />}
             </a>
           ))}
         </footer>
