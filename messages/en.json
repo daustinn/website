@@ -1,48 +1,39 @@
 {
   "header": {
-    "language": {
-      "title": "Choose a language",
-      "description": "Select the language you want to use."
-    }
+    "subtitle": "Full Stack Developer"
   },
-  "home": {
-    "banner": "Full Stack Developer"
-  },
+
   "about": {
     "title": "About me",
-    "description_0": "Full Stack developer with more than 3 years of experience creating high-quality, minimalist websites and applications. I specialize in JavaScript technologies such as",
-    "description_1": "I am skilled in managing databases such as",
-    "description_2": "ensuring scalable and efficient solutions for various projects.",
-    "description_3": "Additionally, I handle server deployments on AWS and dedicated Linux servers, and I am proficient with",
-    "description_4": "for seamless version control and collaboration.",
-    "about_ubdated": "Updated on November 2, 2024"
+    "description_0": "More than 3 years creating and maintaining applications and services in different programming languages.",
+    "description_1": "From planning and structuring to implementation and deployment. I love working with modern, stable and Open Source technologies.",
+    "about_ubdated": "Updated on November 15, 2024"
   },
   "projects": {
     "title": "Personal projects",
     "list": {
+      "ecommerce": {
+        "description": "E-commerce platform built with Nextjs, Sanity & Stripe"
+      },
       "nanui": {
-        "title": "Nan UI",
-        "description": "Components designed so you can copy and paste into your React and Next.js apps"
+        "description": "System UI Kit for React.js and Next.js"
       },
       "graphi": {
-        "title": "Graphi",
         "description": "Mockup APIs and GraphQL for frontend developers"
       }
     }
   },
   "experiences": {
     "title": "Featured experiences",
+    "now": "Now",
     "list": {
       "airzel": {
-        "title": "Airzel",
-        "description": "CEO and co-founder"
+        "description": "Front End Developer, React.js & Next.js"
       },
       "la-pontificia": {
-        "title": "La Pontificia",
         "description": "Fullstack Developer, Next.js and Laravel"
       },
       "nueva-acropolis": {
-        "title": "Nueva Acrópolis",
         "description": "Fullstack Developer, React.js & Firebase"
       }
     }
@@ -56,6 +47,34 @@
     "deployed_on": "Deployed on",
     "light": "Light",
     "dark": "Dark",
-    "system": "System"
+    "system": "System",
+    "language": {
+      "title": "Choose a language",
+      "description": "Select the language you want to use."
+    }
+  },
+  "conections": {
+    "list": {
+      "github": {
+        "title": "GitHub",
+        "description": "Check out my repositories on GitHub"
+      },
+      "x": {
+        "title": "x",
+        "description": "My X profile"
+      },
+      "email": {
+        "title": "Email",
+        "description": "Send me an email"
+      },
+      "resume": {
+        "title": "My Resume",
+        "description": "Download my resume"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "My LinkedIn profile"
+      }
+    }
   }
 }
