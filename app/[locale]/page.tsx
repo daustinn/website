@@ -1,77 +1,46 @@
-import { Metadata } from 'next'
-import { About } from 'ui/components/about'
-import { Experiences } from 'ui/components/experiences'
-import { Footer } from 'ui/components/footer'
-import { Header } from 'ui/components/header'
-import { Projects } from 'ui/components/projects'
-
-export const metadata: Metadata = {
-  title: 'David Bendezú (Daustinn) - Front-End Developer and UI Designer',
-  description:
-    'Front-End Developer and UI Designer based in Lima, Perú with a passion for web development and open source software.',
-  keywords: [
-    'David Bendezú',
-    'Daustinn',
-    'Front-End',
-    'Developer',
-    'UI Designer',
-    'Web Developer',
-    'Open Source',
-    'React',
-    'Next.js',
-    'Node.js',
-    'JavaScript',
-    'TypeScript',
-    'CSS',
-    'HTML',
-    'Web Development',
-    'Frontend Development',
-    'Backend Development',
-    'Fullstack Development',
-    'Lima',
-    'Perú'
-  ],
-  abstract:
-    'Front-End Developer and UI Designer based in Lima, Perú with a passion for web development and open source software.',
-  openGraph: {
-    type: 'website',
-    title: 'Daustinn',
-    description:
-      'More than 3 years creating beautiful and minimalist websites and applications with the latest technologies.',
-    images: {
-      hash: 'og-image-home',
-      host: 'https://daustinn.com',
-      pathname: '/og/home.webp',
-      hostname: 'daustinn.com',
-      href: 'https://daustinn.com/og/home.webp',
-      origin: 'https://daustinn.com',
-      protocol: 'https:',
-      searchParams: new URLSearchParams(),
-      url: 'https://daustinn.com/og/home.webp',
-      alt: 'Daustinn',
-      height: 630,
-      secureUrl: 'https://daustinn.com/og/home.webp',
-      type: 'image/webp',
-      width: 1200
-    }
-  }
-}
+import { getTranslations } from 'next-intl/server'
+import { About } from 'ui/components/sections/about'
+import { Experiences } from 'ui/components/sections/experiences'
+import { Projects } from 'ui/components/sections/projects'
+import Header from 'ui/components/sections/header'
+import { Skills } from 'ui/components/sections/skills'
 
 export default async function Home({
-  params: { locale }
+  params
 }: {
-  params: { locale: string }
+  params: Promise<{
+    locale: string
+  }>
 }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale })
+
   return (
-    <main className="flex flex-col min-h-svh">
-      <div className="flex grow flex-col pb-10">
+    <main className="flex flex-col flex-grow">
+      <header className="md:pt-14 pt-4 px-4 lg:px-10 max-w-2xl mx-auto w-full">
         <Header locale={locale} />
-        <About locale={locale} />
-        <Projects locale={locale} />
+      </header>
+      <section className="lg:pt-14 pt-14 px-4 lg:px-10 max-w-2xl mx-auto w-full">
+        <h2 className="font-medium tracking-tight text-xl pb-3">
+          {t('experiences.title')}
+        </h2>
         <Experiences locale={locale} />
-        {/* <Skills /> */}
-      </div>
-      <Footer locale={locale} />
+      </section>
+      <section className="lg:pt-14 pt-14 px-4 lg:px-10 max-w-2xl mx-auto w-full">
+        <h2 className="font-medium tracking-tight text-xl pb-3">
+          {t('projects.title')}
+        </h2>
+        <Projects locale={locale} />
+      </section>
+      <section className="lg:pt-14 pt-14 px-4 lg:px-10 max-w-2xl mx-auto w-full">
+        <h2 className="font-medium tracking-tight text-xl pb-3">
+          {t('about.title')}
+        </h2>
+        <About locale={locale} />
+      </section>
+      <section className="lg:pt-14 pt-14 px-2 lg:px-5 w-full">
+        <Skills />
+      </section>
     </main>
   )
 }

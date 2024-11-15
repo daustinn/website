@@ -1,40 +1,62 @@
-import type { Metadata } from 'next'
 import '../globals.css'
 import { ThemeProvider } from 'providers/theme'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
+import { Metadata } from 'next'
+import ClientScroll from 'ui/components/client-scroll'
+import { Footer } from 'ui/components/footer'
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: 'https://daustinn.com',
-    languages: {
-      es: 'https://daustinn.com/es',
-      en: 'https://daustinn.com'
-    },
-    types: { html: 'text/html' }
-  },
+  title: 'Daustinn - Fullstack Developer',
+  description:
+    'Fullstack Developer based in Lima, Perú with a passion for web development and open source software.',
+  keywords: [
+    'David Bendezú',
+    'Daustinn',
+    'Fullstack Developer',
+    'Developer',
+    'UI Designer',
+    'Web Developer',
+    'Open Source',
+    'React',
+    'Next.js',
+    'Node.js',
+    'JavaScript',
+    'TypeScript',
+    'CSS',
+    'HTML',
+    'Web Development',
+    'Frontend Development',
+    'Backend Development',
+    'Fullstack Development',
+    'Lima',
+    'Perú'
+  ],
   category: 'Front-End Developer and UI Designer',
-  creator: 'David Bendezú',
-  icons: './favicon.svg',
-  authors: {
-    name: 'David Bendezú',
-    url: 'https://daustinn.com'
-  },
-  metadataBase: {
-    hash: 'daustinn',
-    host: 'https://daustinn.com',
-    hostname: 'daustinn.com',
-    href: 'https://daustinn.com',
-    origin: 'https://daustinn.com',
-    password: 'daustinn',
-    pathname: '/',
-    port: '443',
-    protocol: 'https:',
-    search: '',
-    toJSON: () => 'https://daustinn.com',
-    toString: () => 'https://daustinn.com',
-    username: 'daustinn',
-    searchParams: new URLSearchParams()
+  icons: './favicon.webp',
+  abstract:
+    'Fullstack Developer based in Lima, Perú with a passion for web development and open source software.',
+  openGraph: {
+    type: 'website',
+    title: 'Daustinn',
+    description:
+      'More than 3 years creating beautiful and minimalist websites and applications with the latest technologies.',
+    images: {
+      hash: 'og-image-home',
+      host: 'https://daustinn.com',
+      pathname: '/favicon.webp',
+      hostname: 'daustinn.com',
+      href: 'https://daustinn.com/favicon.webp',
+      origin: 'https://daustinn.com',
+      protocol: 'https:',
+      searchParams: new URLSearchParams(),
+      url: 'https://daustinn.com/favicon.webp',
+      alt: 'Daustinn',
+      height: 630,
+      secureUrl: 'https://daustinn.com/favicon.webp',
+      type: 'image/webp',
+      width: 1200
+    }
   }
 }
 
@@ -49,9 +71,17 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="dark:bg-[#0b0b0b] dark:text-stone-100 bg-white text-black">
+      <body className="dark:bg-[#0a0908] dark:text-stone-100 flex flex-col min-h-svh bg-white text-black">
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <ClientScroll />
+            {children}
+            <footer className="border-t lg:mt-14 mt-14 dark:border-neutral-800">
+              <div className="px-4 lg:px-10 max-w-2xl mx-auto w-full">
+                <Footer />
+              </div>
+            </footer>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
