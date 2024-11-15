@@ -1,34 +1,30 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { SiGmail } from 'react-icons/si'
 
 export const conections = [
   {
+    id: 'github',
     icon: FaGithub,
     title: 'Github profile of daustinn',
     username: '@daustinn',
     href: 'https://github.com/daustinn'
   },
   {
+    id: 'x',
     icon: FaXTwitter,
     title: 'X profile of @daustinndev',
     username: '@daustinndev',
     href: 'https://x.com/daustinndev'
   },
   {
-    icon: FaLinkedin,
-    title: 'LinkedIn profile of daustinn',
-    username: '@daustinn',
-    href: 'https://linkedin.com/in/daustinn/'
-  },
-  {
+    id: 'email',
     icon: SiGmail,
-    title: 'Email me at',
     username: '',
     href: 'mailto:daustinn.dev@gmail.com'
   },
   {
-    title: 'My Resume',
+    id: 'resume',
     username: '',
     href: '/resume.pdf'
   }
@@ -129,11 +125,18 @@ export const seoTecnologies = {
 export const projects = [
   {
     id: 'nanui',
-    href: 'https://nanui.daustinn.com'
+    title: 'UI',
+    href: 'https://ui.daustinn.com'
   },
   {
     id: 'graphi',
+    title: 'Graphi',
     href: 'https://graphi.daustinn.com'
+  },
+  {
+    id: 'ecommerce',
+    title: 'Ecommerce',
+    href: 'https://ecommerce.daustinn.com'
   }
 ]
 
@@ -141,34 +144,39 @@ export const experiences = [
   {
     id: 'airzel',
     title: 'Airzel',
-    years: ['2024', 'Actuality'],
-    description: 'CEO and co-founder'
+    year: 2024,
+    now: true,
+    description:
+      'Front End Developer, Next.js, TypeScript, Tailwind CSS & Vercel',
+    href: 'https://airzel.com'
   },
   {
     id: 'la-pontificia',
     title: 'La Pontificia',
-    years: ['2023', 'Actuality'],
-    description: 'Fullstack Developer, Next.js and Laravel',
+    year: 2023,
+    now: false,
+    description: 'Full Stack Developer, Next.js, Laravel, MySQL & Redis',
     href: 'https://lp.com.pe'
   },
   {
     id: 'nueva-acropolis',
     title: 'Nueva Acrópolis',
-    years: ['2022', '2023'],
-    description: 'Fullstack Developer, React.js & Firebase',
-    href: 'https://ayacuchoacropolis1.com'
+    year: 2022,
+    now: false,
+    description: 'Front End Developer, React.js & Firebase (Maintenance)',
+    href: 'https://acropolisperu.org/'
   }
 ]
 
-export const locales = {
+export const languages = {
   en: {
-    name: 'English',
-    href: '/en',
+    name: 'English (US)',
+    region: 'United States',
     locale: 'en'
   },
   es: {
-    name: 'Español',
-    href: '/es',
+    name: 'Español (ES)',
+    region: 'España',
     locale: 'es'
   }
 }
