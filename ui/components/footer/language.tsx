@@ -18,8 +18,8 @@ export default function Language() {
           {languages[locale].name}
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay className="bg-stone-950/80 fixed inset-0 grid place-content-center">
-            <Dialog.Content className="dark:bg-stone-900 bg-stone-50 w-[600px] max-w-full rounded-xl drop-shadow-[0_0_10px_rgba(0,0,0,.7)]">
+          <Dialog.Overlay className="bg-stone-950/80 z-10 fixed inset-0 grid place-content-center">
+            <Dialog.Content className="dark:bg-stone-900 z-20 bg-stone-50 w-[600px] max-w-full rounded-xl drop-shadow-[0_0_10px_rgba(0,0,0,.7)]">
               <header className="p-4 border-b flex items-center gap-4 dark:border-stone-700">
                 <Dialog.Close>
                   <FaXmark />
