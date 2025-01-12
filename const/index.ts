@@ -124,14 +124,9 @@ export const seoTecnologies = {
 
 export const projects = [
   {
-    id: 'nanui',
-    title: 'UI',
-    href: 'https://ui.daustinn.com'
-  },
-  {
-    id: 'graphi',
-    title: 'Graphi',
-    href: 'https://graphi.daustinn.com'
+    id: 'anni',
+    title: 'Anni',
+    href: 'https://anni.daustinn.com'
   },
   {
     id: 'ecommerce',
