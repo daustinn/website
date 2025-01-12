@@ -14,13 +14,8 @@
       "ecommerce": {
         "description": "Ecommerce construida con Next.js 15, Sanity y Stripe"
       },
-      "nanui": {
-        "title": "UI",
-        "description": "Kit de interfaz de sistema para React.js y Next.js"
-      },
-      "graphi": {
-        "title": "Graphi",
-        "description": "APIs y GraphQL de mockup para desarrolladores frontend"
+      "anni": {
+        "description": "Sistema de notificaciones simple y fácil de usar para React con Tailwind CSS."
       }
     }
   },
