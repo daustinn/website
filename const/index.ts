@@ -126,7 +126,7 @@ export const projects = [
   {
     id: 'anni',
     title: 'Anni',
-    href: 'https://anni.daustinn.com'
+    href: 'https://daustinn.com/anni'
   },
   {
     id: 'ecommerce',
