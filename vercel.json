@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/anni(.*)",
-      "destination": "https://anni-navy.vercel.app/$1"
+      "source": "/anni/:path",
+      "destination": "https://anni-navy.vercel.app/:path"
     }
   ]
 }
