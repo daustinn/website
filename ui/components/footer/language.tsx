@@ -4,7 +4,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { languages } from 'const'
 import { Link } from 'i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
-import { FaXmark } from 'react-icons/fa6'
+import { Xmark } from 'ui/icons'
 import { Globe } from 'ui/icons/globe'
 
 export default function Language() {
@@ -13,8 +13,8 @@ export default function Language() {
   return (
     <div>
       <Dialog.Root>
-        <Dialog.Trigger className="flex items-center hover:underline text-sm gap-1 font-medium">
-          <Globe size={20} />
+        <Dialog.Trigger className="flex items-center hover:underline text-sm gap-1">
+          <Globe size={16} />
           {languages[locale].name}
         </Dialog.Trigger>
         <Dialog.Portal>
@@ -22,7 +22,7 @@ export default function Language() {
             <Dialog.Content className="dark:bg-stone-900 z-20 bg-stone-50 w-[600px] max-w-full rounded-xl drop-shadow-[0_0_10px_rgba(0,0,0,.7)]">
               <header className="p-4 border-b flex items-center gap-4 dark:border-stone-700">
                 <Dialog.Close>
-                  <FaXmark />
+                  <Xmark size={14} />
                 </Dialog.Close>
                 <Dialog.Title>{t('footer.language.title')}</Dialog.Title>
               </header>

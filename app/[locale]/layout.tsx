@@ -73,12 +73,10 @@ export default async function RootLayout({
       <body className="dark:bg-[#0a0908] dark:text-stone-100 flex flex-col min-h-svh bg-white text-black">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
-            {children}
-            <footer className="border-t lg:mt-14 mt-14 dark:border-neutral-800">
-              <div className="px-4 lg:px-10 max-w-2xl mx-auto w-full">
-                <Footer />
-              </div>
-            </footer>
+            <main className="flex flex-col flex-grow max-w-3xl mx-auto w-full lg:px-10 px-4">
+              {children}
+            </main>
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

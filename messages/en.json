@@ -7,7 +7,7 @@
     "title": "About me",
     "description_0": "More than 3 years creating and maintaining applications and services in different programming languages.",
     "description_1": "From planning and structuring to implementation and deployment. I love working with modern, stable and Open Source technologies.",
-    "about_ubdated": "Updated on November 15, 2024"
+    "about_ubdated": "Updated on Febrary 10, 2025"
   },
   "projects": {
     "title": "Personal projects",
@@ -17,6 +17,9 @@
       },
       "anni": {
         "description": "Simple easy-to-use notification system for React with Tailwind CSS."
+      },
+      "hothooks": {
+        "description": "React hooks library for common use cases."
       }
     }
   },

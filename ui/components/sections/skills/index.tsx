@@ -112,7 +112,7 @@ export function Skills() {
               )}
             >
               <skill.icon
-                size={25}
+                size={20}
                 className="mx-auto opacity-60 dark:opacity-100"
               />
               <p className="text-xs mt-2">{skill.title}</p>

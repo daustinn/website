@@ -1,25 +1,28 @@
-import { FaGithub } from 'react-icons/fa'
-import { FaXTwitter } from 'react-icons/fa6'
-import { SiGmail } from 'react-icons/si'
+// import { FaGithub } from 'react-icons/fa'
+// import { FaXTwitter } from 'react-icons/fa6'
+// import { SiGmail } from 'react-icons/si'
+
+import { Gmail, XSocial } from 'ui/icons'
+import { Github } from 'ui/icons/github'
 
 export const conections = [
   {
     id: 'github',
-    icon: FaGithub,
+    icon: Github,
     title: 'Github profile of daustinn',
     username: '@daustinn',
     href: 'https://github.com/daustinn'
   },
   {
     id: 'x',
-    icon: FaXTwitter,
+    icon: XSocial,
     title: 'X profile of @daustinndev',
     username: '@daustinndev',
     href: 'https://x.com/daustinndev'
   },
   {
     id: 'email',
-    icon: SiGmail,
+    icon: Gmail,
     username: '',
     href: 'mailto:daustinn.dev@gmail.com'
   },
@@ -124,9 +127,14 @@ export const seoTecnologies = {
 
 export const projects = [
   {
+    id: 'hothooks',
+    title: 'Hothooks',
+    href: '/hothooks'
+  },
+  {
     id: 'anni',
     title: 'Anni',
-    href: 'https://daustinn.com/anni'
+    href: '/anni'
   },
   {
     id: 'ecommerce',

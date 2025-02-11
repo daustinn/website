@@ -24,7 +24,7 @@ export const ToggleTheme = () => {
   if (!mounted) return <div className="p-3"></div>
 
   return (
-    <div className="rounded-full border flex items-center p-0.5 dark:border-stone-600 border-stone-500">
+    <div className="rounded-full border flex items-center p-0.5 dark:border-blue-600 border-blue-600">
       {Object.entries(themes).map(([key, value]) => {
         return (
           <button
@@ -32,9 +32,9 @@ export const ToggleTheme = () => {
             onClick={() => setTheme(key)}
             key={key}
             className={cn(
-              'rounded-full text-stone-600 dark:text-stone-500 px-1.5 py-0.5 text-xs',
+              'rounded-full text-blue-600 dark:text-blue-500 px-1.5 py-0.5 text-xs',
               currentTheme === key &&
-                'dark:bg-stone-600 bg-stone-600 text-white dark:text-white'
+                'dark:bg-blue-600 bg-blue-600 text-white dark:text-white'
             )}
           >
             {value}
