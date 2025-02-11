@@ -2,10 +2,8 @@
 
 import React from 'react'
 import { Highlight as HighlightPrism } from 'prism-react-renderer'
-import { prismDarkAnniTheme } from '@/utils/theme'
-import { cn } from '@nanui/utils'
-import { Copy } from '@/icons'
-import { toast } from 'anni'
+import { prismDarkTheme } from 'lib/prism-theme'
+import { cn } from 'utils'
 
 export default function Highlight({
   children,
@@ -37,12 +35,11 @@ export default function Highlight({
 }) {
   const handleCopy = () => {
     navigator.clipboard.writeText(copyValue ?? children)
-    toast('Code copied to clipboard 🗒️')
   }
   return (
     <div className="w-full group h-full z-[100] relative">
       <HighlightPrism
-        theme={prismDarkAnniTheme}
+        theme={prismDarkTheme}
         code={children}
         language={language}
       >
@@ -74,7 +71,7 @@ export default function Highlight({
             title="Copy to clipboard"
             className="flex z-[1] hover:scale-110 active:scale-95 pointer-events-auto text-stone-500 hover:text-white transition-transform ml-auto pl-2 items-center justify-center"
           >
-            <Copy />
+            {/* <Copy /> */}
           </button>
         </div>
       )}
