@@ -2,13 +2,13 @@ import { conections } from 'const'
 import { getTranslations } from 'next-intl/server'
 import React from 'react'
 
-export async function About({ locale }: { locale: string }) {
-  const t = await getTranslations({ locale })
+export async function About() {
+  const t = await getTranslations()
   return (
-    <article className="space-y-3 [&>p>a]:opacity-90 dark:[&>p>a]:opacity-70 hover:[&>p>a]:opacity-100 hover:[&>p>a]:underline">
+    <article className="space-y-3 pb-10">
       <p className="dark:opacity-80">{t('about.description_0')}</p>
       <p className="dark:opacity-80">{t('about.description_1')}</p>
-      <footer className="flex items-center hover:[&>a]:dark:text-cyan-400 hover:[&>a]:text-cyan-700 hover:[&>a]:opacity-100 py-1 gap-4">
+      <footer className="flex items-center [&>a]:hover:dark:text-cyan-400 [&>a]:hover:text-cyan-700 [&>a]:hover:opacity-100 py-1 gap-4">
         {conections.map((conection, key) => (
           <a
             href={conection.href}

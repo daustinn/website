@@ -1,9 +1,9 @@
 import { projects } from 'const'
-import { Link } from 'i18n/routing'
+import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { ArrowOutward } from 'ui/icons'
-export const Projects = async ({ locale }: { locale: string }) => {
-  const t = await getTranslations({ locale })
+export const Projects = async () => {
+  const t = await getTranslations()
   return (
     <ul className="flex flex-col gap-1">
       {projects.map((project, key) => {

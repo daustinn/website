@@ -3,8 +3,8 @@ import { getTranslations } from 'next-intl/server'
 import React from 'react'
 import { ArrowOutward } from 'ui/icons'
 
-export async function Experiences({ locale }: { locale: string }) {
-  const t = await getTranslations({ locale })
+export async function Experiences() {
+  const t = await getTranslations()
   return (
     <ul className="flex flex-col gap-1">
       {experiences.map((experience, key) => (

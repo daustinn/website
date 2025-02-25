@@ -5,6 +5,7 @@
 import { Gmail, XSocial } from 'ui/icons'
 import { Github } from 'ui/icons/github'
 
+export const LANGUAGE_KEY = 'lang'
 export const conections = [
   {
     id: 'github',
@@ -126,6 +127,11 @@ export const seoTecnologies = {
 }
 
 export const projects = [
+  {
+    id: 'graph-peru',
+    title: 'Graph Perú',
+    href: '/graph-peru'
+  },
   {
     id: 'hothooks',
     title: 'Hothooks',

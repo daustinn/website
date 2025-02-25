@@ -19,6 +19,9 @@
       },
       "hothooks": {
         "description": "Librería de React hooks para casos de uso comunes."
+      },
+      "graph-peru": {
+        "description": "Rest Api y GraphQL para obtener datos de RENIEC y SUNAT."
       }
     }
   },
@@ -74,6 +77,12 @@
         "title": "LinkedIn",
         "description": "Mi perfil de LinkedIn."
       }
+    }
+  },
+
+  "childs": {
+    "ui": {
+      "back": "Atras"
     }
   }
 }

@@ -2,7 +2,6 @@
   "header": {
     "subtitle": "Full Stack Developer"
   },
-
   "about": {
     "title": "About me",
     "description_0": "More than 3 years creating and maintaining applications and services in different programming languages.",
@@ -20,6 +19,9 @@
       },
       "hothooks": {
         "description": "React hooks library for common use cases."
+      },
+      "graph-peru": {
+        "description": "Rest Api and GraphQL to get data from RENIEC and SUNAT."
       }
     }
   },
@@ -75,6 +77,12 @@
         "title": "LinkedIn",
         "description": "My LinkedIn profile"
       }
+    }
+  },
+
+  "childs": {
+    "ui": {
+      "back": "Back"
     }
   }
 }

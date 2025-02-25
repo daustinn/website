@@ -2,8 +2,7 @@ import { PrismTheme } from 'prism-react-renderer'
 
 const prismDarkTheme: PrismTheme = {
   plain: {
-    backgroundColor: 'hsl(0, 0%, 11%)',
-    color: 'rgb(255,255,255)',
+    color: '#bbb9aa)',
     textShadow: '0 2px 4px rgba(0, 0, 0,.1)'
   },
   styles: [
@@ -38,20 +37,20 @@ const prismDarkTheme: PrismTheme = {
         'maybe-class-name'
       ],
       style: {
-        color: 'hsl(27, 100%, 80%)'
+        color: '#dac5b4'
       }
     },
     {
       types: ['variable', 'string', 'char', 'inserted', 'regex', 'attr-value'],
       style: {
-        color: 'hsl(164, 100%, 80%)'
+        color: '#cafff1'
       }
     },
 
     {
       types: ['plain-text', 'plain', 'atrule', 'property', 'imports', 'script'],
       style: {
-        color: 'rgb(255,255,255)'
+        color: '#bbbab7'
       }
     },
 
@@ -83,7 +82,6 @@ const prismDarkTheme: PrismTheme = {
 }
 const prismLightTheme: PrismTheme = {
   plain: {
-    backgroundColor: 'hsl(84, 100%, 98%)',
     color: 'rgb(0,0,0)'
   },
   styles: [
