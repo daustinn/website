@@ -1,0 +1,61 @@
+import FetchPerson from './fetch-person'
+import FetchBusiness from './fetch-business'
+import GraphqlBusiness from './graphql-business'
+import GraphqlPerson from './graphql-person'
+
+<article className="max-w-2xl w-full pt-5 mx-auto">
+
+# Graph Perú
+
+Free API to consult information about people and companies in Peru.
+
+Access detailed information about people and companies in Peru through their `DNI` or `RUC` number, with official data provided by [_Sunat_](https://www.sunat.gob.pe) and [_Reniec_](https://www.reniec.gob.pe), Compatible with both `GraphQL` and `REST`.
+
+Without access token, without usage limits and with a response in [_JSON_](https://www.json.org) format.
+
+Ideal for personal projects and non-commercial use with fast and efficient responses thanks to caching technology with [_Redis_](https://redis.io) and [_Cloudflare_](https://www.cloudflare.com).
+
+## Endpoints
+
+You can consult information about people in Peru using their 'DNI' number.
+
+<FetchPerson info="Use the native JavaScript or axios API to query the API." />
+<br />
+
+You can also consult information about companies in Peru using their 'RUC' number.
+
+<FetchBusiness info="Use the native JavaScript or axios API to query the API." />
+
+## GraphQL
+
+For `GraphQL` lovers, you can also consult information on
+people and companies in Peru using their 'DNI' or 'RUC' number.
+
+To consult information about people in Peru. The variable `match` is the `DNI` number of the person to consult.
+
+<GraphqlPerson info="Use any GraphQL client to query the API. like Apollo Client, Relay, urql etc." />
+<br />
+
+To consult information about companies in Peru. The `match` variable is the `RUC` number of the company to consult.
+
+<GraphqlBusiness info="Use any GraphQL client to query the API. like Apollo Client, Relay, urql etc." />
+
+## How does the service work?
+
+Some very interesting technologies are used to achieve a quick and efficient response. Such as [_Redis_](https://redis.io), an open source caching system used as a database, cache, and message broker.
+
+And [_Cloudflare_](https://www.cloudflare.com), an Internet security and network services company that provides content delivery network, Internet security services, and distributed name server services.
+
+<div className="max-w-[400px]">
+  ![Infraestructure Diagram by Graph Perú
+  ](https://cdn.daustinn.com/infraestructure-diagram-by-graphperu.png)
+</div>
+## Anything else
+
+For `DDOS` denial of service attacks, a usage limit of _`50 queries`_ per minute per IP has been implemented. If you need further consultation, you can [contact me](mailto:daustinn.dev@gmail.com) for personalized and paid service.
+
+If you have any questions, suggestions or problems, please feel free to [contact me](mailto:daustinn.dev@gmail.com).
+
+<br/>
+<br/>
+</article>

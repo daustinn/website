@@ -1,0 +1,61 @@
+import FetchPerson from './fetch-person'
+import FetchBusiness from './fetch-business'
+import GraphqlBusiness from './graphql-business'
+import GraphqlPerson from './graphql-person'
+
+<article className="max-w-2xl w-full pt-5 mx-auto">
+
+# Graph Perú
+
+API gratuita para consultar información de personas y empresas en Perú.
+
+Accede a información detallada sobre personas y empresas en Perú mediante su número de `DNI` o `RUC`, con datos oficiales proporcionados por la [_Sunat_](https://www.sunat.gob.pe) y la [_Reniec_](https://www.reniec.gob.pe), Compatible tanto con `GraphQL` como con `REST`.
+
+Sin token de acceso, sin límites de uso y con respuesta en formato [_JSON_](https://www.json.org).
+
+Ideal para proyectos personales y de uso no comercial con respuestas rápidas y eficientes gracias a la tecnología de caché con [_Redis_](https://redis.io) y [_Cloudflare_](https://www.cloudflare.com).
+
+## Endpoints
+
+Puedes consultar información de personas en Perú mediante su número de `DNI`.
+
+<FetchPerson info="Utilice JavaScript nativo o API de axios para consultar la API." />
+<br />
+
+También puedes consultar información de empresas en Perú mediante su número de `RUC`.
+
+<FetchBusiness info="Utilice JavaScript nativo o API de axios para consultar la API." />
+
+## GraphQL
+
+Para los amantes de `GraphQL`, también puedes consultar información de
+personas y empresas en Perú mediante su número de `DNI` o `RUC`.
+
+Para consultar información de personas en Perú. La variable `match` es el número de`DNI` de la persona a consultar.
+
+<GraphqlPerson info="Utilice cualquier cliente GraphQL para consultar la API. como Apollo Client, Relay, urql, etc." />
+<br />
+
+Para consultar información de empresas en Perú. La variable `match` es el número de `RUC` de la empresa a consultar.
+
+<GraphqlBusiness info="Utilice cualquier cliente GraphQL para consultar la API. como Apollo Client, Relay, urql, etc." />
+
+## ¿Como funciona el servicio?
+
+Se utiliza algunas tecnologías muy interesantes para lograr una respuesta rápida y eficiente. Como [_Redis_](https://redis.io), un sistema de almacenamiento en caché de código abierto que se usa como base de datos, caché y agente de mensajes.
+
+Y [_Cloudflare_](https://www.cloudflare.com), una empresa de servicios de red y seguridad en Internet que proporciona una red de entrega de contenido, servicios de seguridad de Internet y servicios de servidores de nombres distribuidos.
+
+<div className="max-w-[400px]">
+  ![Infraestructure Diagram by Graph Perú
+  ](https://cdn.daustinn.com/infraestructure-diagram-by-graphperu.png)
+</div>
+## Algo más
+
+Para ataques de denegación de servicio `DDOS`, se ha implementado un límite de uso de _`50 consultas`_ por minuto por IP. Si necesitas más consultas, puedes [contactarme](mailto:daustinn.dev@gmail.com) para obtener un servicio personalizado y de pago.
+
+Si tienes alguna pregunta, sugerencia o problema, no dudes en [contactarme](mailto:daustinn.dev@gmail.com).
+
+<br/>
+<br/>
+</article>
