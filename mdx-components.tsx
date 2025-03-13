@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { MDXComponents } from 'mdx/types'
+import Link from 'node_modules/next/link'
 import Highlight from 'ui/commons/highlight'
 import { H1 as h1 } from 'ui/components/h1'
 import { H2 as h2 } from 'ui/components/h2'
@@ -12,16 +13,20 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2,
     h3,
     p: (props) => (
-      <p className="text-stone-600 dark:text-stone-300 mb-4" {...props} />
+      <p className="text-stone-900 dark:text-stone-300 mb-4" {...props} />
     ),
-    a: (props) => (
-      <a
-        className="text-[#11a1ba] underline dark:text-[#b4e2d5] hover:dark:text-[#b8f6e4] hover:underline"
-        target="_blank"
-        rel="noreferrer"
-        {...props}
-      />
-    ),
+    a: (props) => {
+      const isExternal = props?.href?.startsWith('http')
+      return (
+        <Link
+          href={props.href ?? '#'}
+          className="text-[#139973] underline dark:text-[#b4e2d5] hover:dark:text-[#b8f6e4] hover:underline"
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          {...props}
+        />
+      )
+    },
     ul: (props) => (
       <ul
         className="list-disc text-stone-700 dark:text-stone-300 ml-5 mb-4"
@@ -53,28 +58,24 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         code={props?.children?.props?.children.trim()}
       />
     ),
-    table: (props) => (
-      <div className="bg-[#141210] mb-4 overflow-auto relative rounded-xl border dark:shadow-[0_0_10px_rgba(0,0,0,.5)] shadow-[0_0_10px_rgba(0,0,0,.2)] border-stone-500/20 text-sm my-4">
-        <table className="w-full" {...props} />
-      </div>
-    ),
+    table: (props) => <table className="w-full text-sm" {...props} />,
     thead: (props) => (
       <thead
-        className="bg-stone-100 dark:bg-stone-800/80 text-left"
+        className="border-b text-left border-stone-200 dark:border-stone-700/70"
         {...props}
       />
     ),
     tbody: (props) => (
       <tbody
-        className="divide-y divide-stone-300 dark:divide-stone-700"
+        className="divide-y divide-stone-300 dark:divide-stone-700/70"
         {...props}
       />
     ),
-    tr: (props) => <tr className="even:bg-stone-500/10" {...props} />,
+    tr: (props) => <tr className="" {...props} />,
     th: (props) => (
       <th className="px-3 py-2 text-left font-semibold" {...props} />
     ),
-    td: (props) => <td className="px-3 py-2" {...props} />,
+    td: (props) => <td className="px-3 py-1.5" {...props} />,
     input: (props) => (
       <input
         className="form-checkbox h-5 w-5 text-blue-600 dark:text-blue-400 border-stone-300 dark:border-stone-700 focus:ring-blue-500"
