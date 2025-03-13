@@ -12,6 +12,7 @@ export const useLocale = () => {
   React.useEffect(() => {
     const cookieLocale = document.cookie
       .split(';')
+      .map((row) => row.trim())
       .find((row) => row.startsWith(`${LANGUAGE_KEY}=`))
       ?.split('=')[1]
 
