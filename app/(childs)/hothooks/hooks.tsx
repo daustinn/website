@@ -5,7 +5,7 @@ import React from 'react'
 const allHooks = ['use-debounce']
 
 export default function Hooks() {
-  const [hooks, setHooks] = React.useState(allHooks)
+  const [hooks] = React.useState(allHooks)
   return (
     <div>
       {hooks.map((hook, index) => (
