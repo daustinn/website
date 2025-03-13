@@ -3,7 +3,7 @@ import { withHeadingId } from './utils'
 
 export function H3({ children }: any) {
   return (
-    <h2 className="group font-bold text-lg mt-5 border-b dark:border-stone-500/30 pb-2 mb-4 relative">
+    <h2 className="group font-bold text-lg mt-5 border-b border-stone-300 dark:border-stone-500/30 pb-2 mb-4 relative">
       {withHeadingId(children)}
     </h2>
   )
