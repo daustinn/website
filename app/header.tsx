@@ -11,7 +11,7 @@ export default function Header() {
   const t = useTranslations()
   const pathname = usePathname()
   return (
-    <header className="flex items-center max-w-2xl px-4 py-10 w-full mx-auto">
+    <header className="flex items-center max-w-2xl px-4 py-10 w-full gap-4 mx-auto">
       <div className="grow">
         <span className="font-medium tracking-tight text-xl">
           {pathname === '/' ? (

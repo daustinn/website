@@ -59,7 +59,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="dark:bg-[#141210] selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black dark:text-stone-100 flex flex-col min-h-svh bg-[#fcfcfc] text-black">
+      <body className="dark:bg-[#141210] dark:text-stone-100 flex flex-col min-h-svh bg-[#fcfcfc] text-black">
         <NextIntlClientProvider messages={messages}>
           <UiProviders>
             <main className="flex flex-col flex-grow">{children}</main>

@@ -9,13 +9,11 @@ export default function ToggleTheme() {
   return (
     <button
       onClick={toggleTheme.bind(null)}
-      className="flex gap-2 group font-mono p-2 rounded-lg font-medium text-xs text-stone-500  hover:text-black hover:dark:text-stone-50 items-center hover:!opacity-100 data-[state=open]:!opacity-100 transition-all"
+      className="flex gap-2 p-2 rounded-lg font-medium text-xs hover:text-black hover:dark:text-stone-50 items-center transition-all"
     >
-      <p className="opacity-0 transition-opacity group-hover:opacity-100">
-        {!theme ? 'System' : theme === 'dark' ? 'Dark' : 'Light'}
-      </p>
-      <Sun size={20} className="dark:hidden block" />
-      <Moon size={20} className="hidden dark:block" />
+      <Sun size={17} className="dark:hidden block" />
+      <Moon size={17} className="hidden dark:block" />
+      <p>{!theme ? 'System' : theme === 'dark' ? 'Dark' : 'Light'}</p>
     </button>
   )
 }
