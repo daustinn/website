@@ -21,7 +21,7 @@ export default function Header() {
           <span>{t('childs.ui.back')}</span>
         </button>
       </div>
-      <div className="flex pointer-events-auto">
+      <div className="flex pointer-events-auto gap-3">
         <ToggleTheme />
         <ToggleLanguage />
       </div>
