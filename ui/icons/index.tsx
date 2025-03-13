@@ -213,3 +213,49 @@ export const Clipboard = React.forwardRef<SVGSVGElement, IconProps>(
   }
 )
 Clipboard.displayName = 'ClipboardIcon'
+
+export const ChevronDown = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, forwardRef) => {
+    return (
+      <svg
+        {...props}
+        ref={forwardRef}
+        width={size}
+        height={size}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    )
+  }
+)
+ChevronDown.displayName = 'ChevronDownIcon'
+
+export const Check = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, forwardRef) => {
+    return (
+      <svg
+        {...props}
+        ref={forwardRef}
+        width={size}
+        height={size}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    )
+  }
+)
+Check.displayName = 'CheckIcon'
