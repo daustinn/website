@@ -3,58 +3,90 @@ import FetchBusiness from './fetch-business'
 import GraphqlBusiness from './graphql-business'
 import GraphqlPerson from './graphql-person'
 
-<article className="max-w-2xl w-full pt-5 mx-auto">
+<article className="max-w-3xl px-4 py-5 w-full mx-auto ">
+  <header className='h-[300px] mx-auto flex flex-col justify-center'>
+    <h1 className='text-7xl font-canela font-bold tracking-tighter py-4'>Graph Perú</h1>
+    <p className='max-w-[40ch]'>API gratuita para consultar información sobre personas y empresas en Perú ⚡.</p>
+  </header>
 
-# Graph Perú
+API gratuita para consultar información sobre personas y empresas en Perú.
 
-API gratuita para consultar información de personas y empresas en Perú.
+Accede a información detallada sobre personas y empresas en Perú a través de su número de `DNI` o `RUC`, con datos oficiales proporcionados por [_Sunat_](https://www.sunat.gob.pe) y [_Reniec_](https://www.reniec.gob.pe), Compatible con ambos `GraphQL` y `REST`.
 
-Accede a información detallada sobre personas y empresas en Perú mediante su número de `DNI` o `RUC`, con datos oficiales proporcionados por la [_Sunat_](https://www.sunat.gob.pe) y la [_Reniec_](https://www.reniec.gob.pe), Compatible tanto con `GraphQL` como con `REST`.
+Sin token de acceso, sin límites de uso y con una respuesta en formato [_JSON_](https://www.json.org).
 
-Sin token de acceso, sin límites de uso y con respuesta en formato [_JSON_](https://www.json.org).
-
-Ideal para proyectos personales y de uso no comercial con respuestas rápidas y eficientes gracias a la tecnología de caché con [_Redis_](https://redis.io) y [_Cloudflare_](https://www.cloudflare.com).
+Ideal para proyectos personales y uso no comercial con respuestas rápidas y eficientes gracias a la tecnología de caching con [_Redis_](https://redis.io) y [_Cloudflare_](https://www.cloudflare.com).
 
 ## Endpoints
 
-Puedes consultar información de personas en Perú mediante su número de `DNI`.
+Puedes consultar información sobre personas en Perú usando su número de 'DNI'.
 
-<FetchPerson info="Utilice JavaScript nativo o API de axios para consultar la API." />
+<FetchPerson info="Utiliza la API nativa de JavaScript o axios para consultar la API." />
 <br />
 
-También puedes consultar información de empresas en Perú mediante su número de `RUC`.
+También puedes consultar información sobre empresas en Perú usando su número de 'RUC'.
 
-<FetchBusiness info="Utilice JavaScript nativo o API de axios para consultar la API." />
+<FetchBusiness info="Utiliza la API nativa de JavaScript o axios para consultar la API." />
 
 ## GraphQL
 
-Para los amantes de `GraphQL`, también puedes consultar información de
-personas y empresas en Perú mediante su número de `DNI` o `RUC`.
+Para los amantes de `GraphQL`, también puedes consultar información sobre personas y empresas en Perú usando su número de 'DNI' o 'RUC'.
 
-Para consultar información de personas en Perú. La variable `match` es el número de`DNI` de la persona a consultar.
+Para consultar información sobre personas en Perú. La variable `match` es el número de `DNI` de la persona a consultar.
 
-<GraphqlPerson info="Utilice cualquier cliente GraphQL para consultar la API. como Apollo Client, Relay, urql, etc." />
+<GraphqlPerson info="Utiliza cualquier cliente GraphQL para consultar la API. como Apollo Client, Relay, urql, etc." />
 <br />
 
-Para consultar información de empresas en Perú. La variable `match` es el número de `RUC` de la empresa a consultar.
+Para consultar información sobre empresas en Perú. La variable `match` es el número de `RUC` de la empresa a consultar.
 
-<GraphqlBusiness info="Utilice cualquier cliente GraphQL para consultar la API. como Apollo Client, Relay, urql, etc." />
+<GraphqlBusiness info="Utiliza cualquier cliente GraphQL para consultar la API. como Apollo Client, Relay, urql, etc." />
 
-## ¿Como funciona el servicio?
+## Respuesta API persona 🗒️
 
-Se utiliza algunas tecnologías muy interesantes para lograr una respuesta rápida y eficiente. Como [_Redis_](https://redis.io), un sistema de almacenamiento en caché de código abierto que se usa como base de datos, caché y agente de mensajes.
+| Campo            | Tipo     | Descripción                             |
+| ---------------- | -------- | --------------------------------------- |
+| DocumentId       | `String` | _Número de Identificación de Documento_ |
+| Surnames         | `String` | _Apellidos de la persona_               |
+| Names            | `String` | _Nombres de la persona_                 |
+| FullName         | `String` | _Nombre completo de la persona_         |
+| PaternalLastName | `String` | _Apellido paterno de la persona_        |
+| MaternalLastName | `String` | _Apellido materno de la persona_        |
+| ResourceOf       | `String` | _Fuente de la información_              |
 
-Y [_Cloudflare_](https://www.cloudflare.com), una empresa de servicios de red y seguridad en Internet que proporciona una red de entrega de contenido, servicios de seguridad de Internet y servicios de servidores de nombres distribuidos.
+## Respuesta API empresa 🗒️
+
+| Campo      | Tipo     | Descripción                             |
+| ---------- | -------- | --------------------------------------- |
+| DocumentId | `String` | _Número de Identificación de Documento_ |
+| Name       | `String` | _Nombre de la empresa_                  |
+| State      | `String` | _Estado de la empresa_                  |
+| Condition  | `String` | _Condición de la empresa_               |
+| Address    | `String` | _Dirección de la empresa_               |
+| Ubigeo     | `String` | _Ubigeo de la empresa_                  |
+| ViaType    | `String` | _Tipo de la vía_                        |
+| ViaName    | `String` | _Nombre de la vía_                      |
+| ZoneType   | `String` | _Tipo de la zona_                       |
+| Number     | `Number` | _Número de la vía_                      |
+| District   | `String` | _Distrito de la empresa_                |
+| Province   | `String` | _Provincia de la empresa_               |
+| Region     | `String` | _Región de la empresa_                  |
+| ResourceOf | `String` | _Fuente de la información_              |
+
+## ¿Cómo funciona el servicio?
+
+Se utilizan tecnologías muy interesantes para lograr una respuesta rápida y eficiente. Como [_Redis_](https://redis.io), un sistema de caching de código abierto utilizado como base de datos, cache y broker de mensajes.
+
+Y [_Cloudflare_](https://www.cloudflare.com), una empresa de seguridad y servicios de red de Internet que proporciona una red de distribución de contenido, servicios de seguridad de Internet y servicios de servidor de nombres distribuidos.
 
 <div className="max-w-[400px]">
-  ![Infraestructure Diagram by Graph Perú
+  ![Diagrama de Infraestructura de Graph Perú
   ](https://cdn.daustinn.com/infraestructure-diagram-by-graphperu.png)
 </div>
-## Algo más
+## ¿Algo más?
 
-Para ataques de denegación de servicio `DDOS`, se ha implementado un límite de uso de _`50 consultas`_ por minuto por IP. Si necesitas más consultas, puedes [contactarme](mailto:daustinn.dev@gmail.com) para obtener un servicio personalizado y de pago.
+Para ataques de denegación de servicio `DDOS`, se ha implementado un límite de uso de _`50 consultas`_ por minuto por IP. Si necesitas una consulta adicional, puedes [contactarme](mailto:daustinn.dev@gmail.com) para un servicio personalizado y pagado.
 
-Si tienes alguna pregunta, sugerencia o problema, no dudes en [contactarme](mailto:daustinn.dev@gmail.com).
+Si tienes alguna pregunta, sugerencia o problema, por favor no dudes en [contactarme](mailto:daustinn.dev@gmail.com).
 
 <br/>
 <br/>

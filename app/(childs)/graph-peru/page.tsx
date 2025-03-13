@@ -1,12 +1,6 @@
-import dynamic from 'next/dynamic'
 import React from 'react'
 import { getLocale } from 'next-intl/server'
-
-const getMDXComponent = async () => {
-  const locale = await getLocale()
-  const file = locale.startsWith('es') ? 'es' : 'en'
-  return import(`./${file}.mdx`)
-}
+import { notFound } from 'next/navigation'
 
 export const metadata = async () => {
   const locale = await getLocale()
@@ -31,7 +25,12 @@ export const metadata = async () => {
 }
 
 export default async function AnniPage() {
-  const MDXContent = dynamic(() => getMDXComponent())
+  const locale = await getLocale()
 
-  return <MDXContent />
+  try {
+    const Content = (await import(`./${locale}.mdx`)).default
+    return <Content />
+  } catch (error) {
+    notFound()
+  }
 }

@@ -3,9 +3,11 @@ import FetchBusiness from './fetch-business'
 import GraphqlBusiness from './graphql-business'
 import GraphqlPerson from './graphql-person'
 
-<article className="max-w-2xl w-full pt-5 mx-auto">
-
-# Graph Perú
+<article className="max-w-3xl px-4 py-5 w-full mx-auto ">
+  <header className='h-[300px] mx-auto flex flex-col justify-center'>
+    <h1 className='text-7xl font-canela font-bold tracking-tighter py-4'>Graph Perú</h1>
+    <p className='max-w-[40ch]'>Free API to consult information about people and companies in Perú ⚡.</p>
+  </header>
 
 Free API to consult information about people and companies in Peru.
 
@@ -39,6 +41,37 @@ To consult information about people in Peru. The variable `match` is the `DNI` n
 To consult information about companies in Peru. The `match` variable is the `RUC` number of the company to consult.
 
 <GraphqlBusiness info="Use any GraphQL client to query the API. like Apollo Client, Relay, urql etc." />
+
+## API person reponse 🗒️
+
+| Field            | Type     | Description                        |
+| ---------------- | -------- | ---------------------------------- |
+| DocumentId       | `String` | _Document Identification Number_   |
+| Surnames         | `String` | _Surnames of the person_           |
+| Names            | `String` | _Names of the person_              |
+| FullName         | `String` | _Full name of the person_          |
+| PaternalLastName | `String` | _Paternal last name of the person_ |
+| MaternalLastName | `String` | _Maternal last name of the person_ |
+| ResourceOf       | `String` | _Source of the information_        |
+
+## API business reponse 🗒️
+
+| Field      | Type     | Description                      |
+| ---------- | -------- | -------------------------------- |
+| DocumentId | `String` | _Document Identification Number_ |
+| Name       | `String` | _Name of the company_            |
+| State      | `String` | _State of the company_           |
+| Condition  | `String` | _Condition of the company_       |
+| Address    | `String` | _Address of the company_         |
+| Ubigeo     | `String` | _Ubigeo of the company_          |
+| ViaType    | `String` | _Type of the street_             |
+| ViaName    | `String` | _Name of the street_             |
+| ZoneType   | `String` | _Type of the zone_               |
+| Number     | `Number` | _Number of the street_           |
+| District   | `String` | _District of the company_        |
+| Province   | `String` | _Province of the company_        |
+| Region     | `String` | _Region of the company_          |
+| ResourceOf | `String` | _Source of the information_      |
 
 ## How does the service work?
 
