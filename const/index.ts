@@ -179,12 +179,12 @@ export const experiences = [
 
 export const languages = {
   en: {
-    name: 'English (US)',
+    name: 'English',
     region: 'United States',
     locale: 'en'
   },
   es: {
-    name: 'Español (ES)',
+    name: 'Español',
     region: 'España',
     locale: 'es'
   }
