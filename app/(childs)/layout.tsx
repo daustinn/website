@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './header'
 import BodyGradients from './gradients'
 import { Chivo_Mono } from 'next/font/google'
-import { cn } from 'utils'
+import { cn } from '~utils'
 
 const mono = Chivo_Mono({ subsets: ['latin'] })
 
