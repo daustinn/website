@@ -2,10 +2,20 @@
 // import { FaXTwitter } from 'react-icons/fa6'
 // import { SiGmail } from 'react-icons/si'
 
-import { Gmail, XSocial } from 'ui/icons'
-import { Github } from 'ui/icons/github'
+import { API, Brush, Gmail, Tools, XSocial } from '~ui/icons'
+import { Github } from '~ui/icons'
+export const DATA_GRADIENTS_KEY = 'data-gradients'
+export const DATA_HEADER_KEY = 'data-header'
+export const DATA_LANGUAGE_KEY = 'data-lang'
+export const DATA_THEME_KEY = 'data-theme'
 
 export const LANGUAGE_KEY = 'lang'
+export const DICTIONARIES = {
+  anni: 'Anni toast',
+  graphperu: 'Graph Perú',
+  'graph-peru': 'Graph Perú',
+  hothooks: 'Hothooks'
+}
 export const conections = [
   {
     id: 'github',
@@ -126,57 +136,44 @@ export const seoTecnologies = {
   }
 }
 
-export const projects = [
-  {
-    id: 'graph-peru',
-    title: 'Graph Perú',
-    href: '/graph-peru'
-  },
-  {
-    id: 'hothooks',
-    title: 'Hothooks',
-    href: '/hothooks'
-  },
-  {
-    id: 'anni',
+export const PROJECTS = {
+  anni: {
+    media: Brush,
     title: 'Anni',
     href: '/anni'
   },
-  {
-    id: 'ecommerce',
-    title: 'Ecommerce',
-    href: 'https://ecommerce.daustinn.com'
+  'graph-peru': {
+    media: API,
+    title: 'Graph Perú',
+    href: '/graph-peru'
+  },
+  hothooks: {
+    media: Tools,
+    title: 'Hothooks',
+    href: '/hothooks'
   }
-]
+}
 
-export const experiences = [
-  {
-    id: 'airzel',
+export const EXPERIENCES = {
+  airzel: {
     title: 'Airzel',
     year: 2024,
     now: true,
-    description:
-      'Front End Developer, Next.js, TypeScript, Tailwind CSS & Vercel',
     href: 'https://airzel.com'
   },
-  {
-    id: 'la-pontificia',
+  'la-pontificia': {
     title: 'La Pontificia',
     year: 2023,
     now: false,
-    description: 'Full Stack Developer, Next.js, Laravel, MySQL & Redis',
     href: 'https://lp.com.pe'
   },
-  {
-    id: 'nueva-acropolis',
+  'nueva-acropolis': {
     title: 'Nueva Acrópolis',
     year: 2022,
     now: false,
-    description: 'Front End Developer, React.js & Firebase (Maintenance)',
     href: 'https://acropolisperu.org/'
   }
-]
-
+}
 export const languages = {
   en: {
     name: 'English',
