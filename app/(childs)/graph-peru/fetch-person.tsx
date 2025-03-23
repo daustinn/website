@@ -2,7 +2,7 @@
 'use client'
 
 import React from 'react'
-import Highlight from 'ui/commons/highlight'
+import Highlight from '~ui/commons/highlight'
 
 export default function FetchPerson({ info }: { info: string }) {
   const [fetching, setFetching] = React.useState(false)
