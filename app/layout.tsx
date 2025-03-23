@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Metadata } from 'next'
 import { themeEffect } from './theme-effect'
-import { UiProviders } from 'providers/ui'
+import { UiProviders } from '~providers/ui'
 
 export const metadata: Metadata = {
   title: 'Daustinn - Fullstack Developer',

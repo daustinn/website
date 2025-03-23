@@ -2,10 +2,10 @@
 
 import React from 'react'
 import { useTranslations } from 'next-intl'
-import ToggleLanguage from 'ui/components/toggle-language'
-import ToggleTheme from 'app/theme-toggle'
-import { usePathname } from 'node_modules/next/navigation'
-import Link from 'node_modules/next/link'
+import ToggleLanguage from '~app/language-toggle'
+import ToggleTheme from '~app/theme-toggle'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Header() {
   const t = useTranslations()
