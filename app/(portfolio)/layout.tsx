@@ -1,4 +1,4 @@
-import Header from 'app/header'
+import Header from '~app/header'
 import React from 'react'
 
 export default function PortfolioLayout({

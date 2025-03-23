@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server'
-import { About } from 'ui/components/sections/about'
-import { Experiences } from 'ui/components/sections/experiences'
-import { Projects } from 'ui/components/sections/projects'
+import { About } from '~ui/components/sections/about'
+import { Experiences } from '~ui/components/sections/experiences'
+import { Projects } from '~ui/components/sections/projects'
 
 export default async function Home() {
   const t = await getTranslations()
