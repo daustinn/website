@@ -5,23 +5,22 @@
   "about": {
     "title": "About me",
     "description_0": "More than 3 years creating and maintaining applications and services in different programming languages.",
-    "description_1": "From planning and structuring to implementation and deployment. I love working with modern, stable and Open Source technologies.",
+    "description_1": "Graduate of the Information Systems Engineering program at Escuela Superior La Pontificia in Perú.",
+    "description_2": "From planning and structuring to implementation and deployment. I love working with modern, stable and Open Source technologies.",
+    "description_3": "I almost always strive to implement my own tools in a way that makes me comfortable working with them, from components and libraries like toasts to complete UI systems for each project and company I work with. Whenever possible, I try to publish my developments on npm or deploy them on my own subdomains so other developers can use them.",
     "about_ubdated": "Updated on March 13, 2025"
   },
   "projects": {
     "title": "Personal projects",
     "list": {
-      "ecommerce": {
-        "description": "E-commerce platform built with Nextjs, Sanity & Stripe"
-      },
       "anni": {
-        "description": "Simple easy-to-use notification system for React with Tailwind CSS."
+        "description": "Simple, beautiful, and easy-to-use notification system."
       },
       "hothooks": {
-        "description": "React hooks library for common use cases."
+        "description": "Commonly used custom hooks for React"
       },
       "graph-peru": {
-        "description": "Rest Api and GraphQL to get data from RENIEC and SUNAT."
+        "description": "Rest API and GraphQL to get data from RENIEC and SUNAT."
       }
     }
   },
@@ -33,7 +32,7 @@
         "description": "Front End Developer, React.js & Next.js"
       },
       "la-pontificia": {
-        "description": "Fullstack Developer, Next.js and Laravel"
+        "description": "Fullstack Developer, React.js, Next.js, Laravel, MySQL y MongoDB"
       },
       "nueva-acropolis": {
         "description": "Fullstack Developer, React.js & Firebase"

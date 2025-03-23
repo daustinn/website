@@ -4,24 +4,23 @@
   },
   "about": {
     "title": "Sobre mí",
-    "description_0": "Más de 3 años creando y manteniendo aplicaciones y servicios en  distintos lenguages de programación.",
-    "description_1": "Desde la planificación y estructuración hasta la implementación y el despliegue. Me encanta trabajar con tecnologías modernas, estables y Open Source.",
+    "description_0": "Más de 3 años creando y manteniendo aplicaciones y servicios con distintas tecnologias y lenguages de programación.",
+    "description_1": "Egresado de la carrera de Ingeniería de Sistemas de Información en la Escuela Superior La Pontificia en Perú.",
+    "description_2": "Desde la planificación y estructuración hasta la implementación y el despliegue. Me encanta trabajar con tecnologías modernas, estables y Open Source.",
+    "description_3": "Casi siempre busco implementar mis propias herramientas en donde me sienta comodo trabajar con ellas, desde componentes, librerias como toasts hasta sistemas UI completos para cada proyecto y empresa en la que trabajo. Y cuando es posible, trato de publicar mis desarrollos en npm o los despliego en mis propios subdominios para que otros desarrolladores puedan usarlos.",
     "about_ubdated": "Actualizado el 13 de marzo de 2025"
   },
   "projects": {
     "title": "Proyectos personales",
     "list": {
-      "ecommerce": {
-        "description": "Ecommerce construida con Next.js 15, Sanity y Stripe"
-      },
       "anni": {
-        "description": "Sistema de notificaciones simple y fácil de usar para React con Tailwind CSS."
+        "description": "Sistema de notificaciones simple, bonito y fácil de usar."
       },
       "hothooks": {
-        "description": "Librería de React hooks para casos de uso comunes."
+        "description": "Hooks personalizados de uso común para React."
       },
       "graph-peru": {
-        "description": "Rest Api y GraphQL para obtener datos de RENIEC y SUNAT."
+        "description": "Rest API y GraphQL para obtener datos de RENIEC y SUNAT."
       }
     }
   },
@@ -30,10 +29,10 @@
     "title": "Experiencia",
     "list": {
       "airzel": {
-        "description": "Front End Developer, React.js & Next.js"
+        "description": "Desarrollador Front End, React.js & Next.js"
       },
       "la-pontificia": {
-        "description": "Desarrollador Fullstack, Next.js, Laravel, MySQL y MongoDB"
+        "description": "Desarrollador Fullstack, React.js, Next.js, Laravel, MySQL y MongoDB"
       },
       "nueva-acropolis": {
         "description": "Desarrollador Fullstack, React.js y Firebase"
