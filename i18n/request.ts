@@ -1,4 +1,4 @@
-import { LANGUAGE_KEY } from 'const'
+import { LANGUAGE_KEY } from '~const'
 import { getRequestConfig } from 'next-intl/server'
 import { cookies } from 'next/headers'
 
