@@ -1,20 +1,20 @@
 import React from 'react'
-import { Html } from 'ui/icons/html'
-import { JavaScript } from 'ui/icons/javascript'
-import { TypeScript } from 'ui/icons/typescript'
-import ReactJS from 'ui/icons/reactjs'
-import { NextJS } from 'ui/icons/nextjs'
-import { TailwindCss } from 'ui/icons/tailwindcss'
-import { NodeJS } from 'ui/icons/nodejs'
-import { MongoDB } from 'ui/icons/mongodb'
-import { Laravel } from 'ui/icons/laravel'
-import { Git } from 'ui/icons/git'
-import { Github } from 'ui/icons/github'
-import { Figma } from 'ui/icons/figma'
-import { Firebase } from 'ui/icons/firebase'
-import { Vercel } from 'ui/icons/vercel'
-import Marquee from 'ui/commons/markee'
-import { cn } from 'utils'
+import { Html } from '~ui/icons/html'
+import { JavaScript } from '~ui/icons/javascript'
+import { TypeScript } from '~ui/icons/typescript'
+import ReactJS from '~ui/icons/reactjs'
+import { NextJS } from '~ui/icons/nextjs'
+import { TailwindCss } from '~ui/icons/tailwindcss'
+import { NodeJS } from '~ui/icons/nodejs'
+import { MongoDB } from '~ui/icons/mongodb'
+import { Laravel } from '~ui/icons/laravel'
+import { Git } from '~ui/icons/git'
+// import { Github } from '~ui/icons/github'
+import { Figma } from '~ui/icons/figma'
+import { Firebase } from '~ui/icons/firebase'
+import { Vercel } from '~ui/icons/vercel'
+import Marquee from '~ui/commons/markee'
+import { cn } from '~utils'
 
 export function Skills() {
   const skills = [
@@ -73,11 +73,11 @@ export function Skills() {
       title: 'Git',
       href: 'https://git-scm.com/'
     },
-    {
-      icon: Github,
-      title: 'Github',
-      href: 'https: //github.com/'
-    },
+    // {
+    //   icon: Github,
+    //   title: 'Github',
+    //   href: 'https: //github.com/'
+    // },
     {
       icon: Figma,
       title: 'Figma',

@@ -1,13 +1,13 @@
-import { experiences } from 'const'
+import { EXPERIENCES } from '~const'
 import { getTranslations } from 'next-intl/server'
 import React from 'react'
-import { ArrowOutward } from 'ui/icons'
+import { ArrowOutward } from '~ui/icons'
 
 export async function Experiences() {
   const t = await getTranslations()
   return (
     <ul className="flex flex-col gap-1">
-      {experiences.map((experience, key) => (
+      {Object.entries(EXPERIENCES).map(([key, experience]) => (
         <a
           href={experience.href ?? '#'}
           target={experience.href ? '_blank' : '_self'}
@@ -27,7 +27,7 @@ export async function Experiences() {
               {experience.title}
             </h2>
             <p className="dark:opacity-60 opacity-80 text-sm">
-              {experience.description}
+              {t(`experiences.list.${key}.description`)}
             </p>
           </div>
           <div className="pr-7 relative flex items-center ">

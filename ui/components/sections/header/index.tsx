@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { useTranslations } from 'next-intl'
-import ToggleLanguage from 'ui/components/toggle-language'
-import ToggleTheme from 'app/theme-toggle'
+import ThemeToggle from '~app/theme-toggle'
+import LanguageToggle from '~app/language-toggle'
 
 export default function Header() {
   const t = useTranslations()
@@ -13,8 +13,8 @@ export default function Header() {
         <h1 className="font-medium tracking-tight text-xl">Daustinn.</h1>
         <h2 className="text-md opacity-80">{t('header.subtitle')}</h2>
       </div>
-      <ToggleTheme />
-      <ToggleLanguage />
+      <ThemeToggle />
+      <LanguageToggle />
     </nav>
   )
 }

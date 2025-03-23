@@ -1,4 +1,4 @@
-import { conections } from 'const'
+import { conections } from '~const'
 import { getTranslations } from 'next-intl/server'
 import React from 'react'
 
@@ -8,6 +8,8 @@ export async function About() {
     <article className="space-y-3 pb-10">
       <p className="dark:opacity-80">{t('about.description_0')}</p>
       <p className="dark:opacity-80">{t('about.description_1')}</p>
+      {/* <p className="dark:opacity-80">{t('about.description_2')}</p> */}
+      <p className="dark:opacity-80">{t('about.description_3')}</p>
       <footer className="flex items-center [&>a]:hover:dark:text-cyan-400 [&>a]:hover:text-cyan-700 [&>a]:hover:opacity-100 py-1 gap-4">
         {conections.map((conection, key) => (
           <a
