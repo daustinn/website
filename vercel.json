@@ -1,12 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/anni",
-      "destination": "https://anni-navy.vercel.app"
-    },
-    {
-      "source": "/anni/:path*",
-      "destination": "https://anni-navy.vercel.app/:path*"
-    }
-  ]
+  "rewrites": []
 }

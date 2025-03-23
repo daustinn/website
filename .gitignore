@@ -3,6 +3,12 @@
 # dependencies
 /node_modules
 /.pnp
+
+# package
+/anni
+/hothooks
+
+
 .pnp.js
 .yarn/install-state.gz
 

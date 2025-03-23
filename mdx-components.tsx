@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { MDXComponents } from 'mdx/types'
-import Link from 'node_modules/next/link'
-import Highlight from 'ui/commons/highlight'
-import { H1 as h1 } from 'ui/components/h1'
-import { H2 as h2 } from 'ui/components/h2'
-import { H3 as h3 } from 'ui/components/h3'
+import Link from 'next/link'
+import Highlight from '~ui/commons/highlight'
+import { H1 as h1 } from '~ui/components/h1'
+import { H2 as h2 } from '~ui/components/h2'
+import { H3 as h3 } from '~ui/components/h3'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
