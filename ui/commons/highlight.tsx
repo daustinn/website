@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { Highlight as HighlightPrism } from 'prism-react-renderer'
-import { prismDarkTheme } from 'lib/prism-theme'
+import { prismDarkTheme, prismLightTheme } from '~lib/prism-theme'
+import { cn } from '~utils'
 
 export default function Highlight({
   language = 'tsx',
@@ -13,7 +14,9 @@ export default function Highlight({
   info,
   code,
   showCopyButton = true,
-  copyButtonTop = true
+  copyButtonTop = true,
+  theme = 'dark',
+  className = ''
 }: {
   copyValue?: string
   copyButtonTop?: boolean
@@ -23,6 +26,8 @@ export default function Highlight({
   action?: () => void
   showCopyButton?: boolean
   code?: string
+  theme?: 'dark' | 'light'
+  className?: string
   language?:
     | 'tsx'
     | 'jsx'
@@ -49,14 +54,22 @@ export default function Highlight({
     setTimeout(() => setCoping(false), 2000)
   }
   return (
-    <div className="w-full flex flex-col overflow-auto group h-full relative text-stone-100 bg-[#161514] rounded-xl border dark:shadow-[0_0_10px_rgba(0,0,0,.5)] shadow-[0_0_10px_rgba(0,0,0,.2)] border-stone-500/20 text-sm">
+    <div
+      className={cn(
+        'w-full flex flex-col overflow-auto group h-full relative rounded-xl border text-sm',
+        className,
+        theme === 'light'
+          ? 'bg-[#fefcfa] text-stone-950 shadow-[0_0_10px_rgba(0,0,0,.1)] border-[#e3e2e2]'
+          : 'text-stone-100 bg-[#161514] shadow-[0_0_10px_rgba(0,0,0,.5)] border-stone-500/20'
+      )}
+    >
       {title && (
         <nav className="border-b border-dashed border-stone-500/20 p-2.5 text-white/40">
           {title}
         </nav>
       )}
       <HighlightPrism
-        theme={prismDarkTheme}
+        theme={theme === 'dark' ? prismDarkTheme : prismLightTheme}
         code={code ?? ''}
         language={language}
       >
@@ -73,19 +86,19 @@ export default function Highlight({
         )}
       </HighlightPrism>
       {(info || action) && (
-        <div className="pl-3 pr-1 pb-1 text-xs">
+        <div className="pl-3 flex items-center pr-1 pb-1 text-xs">
           {info && (
             <p className="grow pointer-events-auto text-wrap text-white/40">
               {info}
-              {action && (
-                <button
-                  onClick={action}
-                  className="border-2 float-right rounded-full text-white font-medium border-stone-400 p-0.5 px-2 hover:scale-105 transition-transform active:scale-95"
-                >
-                  {actionChild}
-                </button>
-              )}
             </p>
+          )}
+          {action && (
+            <button
+              onClick={action}
+              className="border-2 ml-auto float-right rounded-full text-white font-medium border-stone-400 p-0.5 px-2 hover:scale-105 transition-transform active:scale-95"
+            >
+              {actionChild}
+            </button>
           )}
         </div>
       )}
