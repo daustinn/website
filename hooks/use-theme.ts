@@ -1,4 +1,4 @@
-import { themeEffect } from 'app/theme-effect'
+import { themeEffect } from '~app/theme-effect'
 import React from 'react'
 
 export const useTheme = () => {

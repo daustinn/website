@@ -1,6 +1,6 @@
 'use client'
 
-import { LANGUAGE_KEY, languages } from 'const'
+import { LANGUAGE_KEY, languages } from '~const'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
