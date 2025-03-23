@@ -116,7 +116,7 @@ const prismLightTheme: PrismTheme = {
         'maybe-class-name'
       ],
       style: {
-        color: 'hsl(20, 62%, 47%)'
+        color: '#e3ac52'
       }
     },
     {
