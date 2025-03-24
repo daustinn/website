@@ -140,7 +140,7 @@ export const PROJECTS = {
   anni: {
     media: Brush,
     title: 'Anni',
-    href: '/anni'
+    href: 'https://anni.daustinn.com'
   },
   'graph-peru': {
     media: API,
