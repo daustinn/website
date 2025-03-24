@@ -26,9 +26,7 @@ export async function About() {
         ))}
       </footer>
       <footer>
-        <p className="text-sm opacity-70 dark:opacity-50">
-          {t('about.about_ubdated')}
-        </p>
+        <p className="opacity-70 dark:opacity-50">{t('about.about_ubdated')}</p>
       </footer>
     </article>
   )

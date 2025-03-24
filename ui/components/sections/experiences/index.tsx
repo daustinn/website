@@ -26,7 +26,7 @@ export async function Experiences() {
             <h2 className="font-medium flex justify-between relative">
               {experience.title}
             </h2>
-            <p className="dark:opacity-60 opacity-80 text-sm">
+            <p className="dark:opacity-60 opacity-80">
               {t(`experiences.list.${key}.description`)}
             </p>
           </div>
