@@ -36,7 +36,7 @@ p {
 }
 button,
 a {
-  @apply cursor-pointer focus:outline-8 focus-visible:outline-8 active:outline-8 transition-all outline-stone-500/10;
+  @apply cursor-pointer transition-all;
 }
 
 .hidden-scroll::-webkit-scrollbar {
