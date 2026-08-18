@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   srcDir: '.',
-  output: 'static',
+  output: 'server',
   adapter: cloudflare({
     prerenderEnvironment: 'node'
   }),
