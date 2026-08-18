@@ -1,0 +1,62 @@
+{
+  "role": "Ingeniero de Software",
+  "greeting": "Hola, ¿Qué tal?",
+  "gretting-meta": "Convierto ideas en productos, con un enfoque en la calidad y la experiencia del usuario.",
+  "experience": {
+    "title": "Experiencia",
+    "items": {
+      "freelance": {
+        "businessName": "Desarrollador Freelance",
+        "role": "Ingeniero de Software",
+        "from": "Dic 2025"
+      },
+      "lp": {
+        "businessName": "Grupo La Pontificia",
+        "role": "Desarrollador de Software y Devops",
+        "from": "Jun 2023"
+      },
+      "acropolis": {
+        "businessName": "Nueva Acrópolis",
+        "role": "Desarrollador Full Stack Freelance",
+        "from": "Abr 2022"
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "items": {
+      "queryeditor": {
+        "title": "QueryEditor",
+        "description": "Cliente SQL Para adminsitrar bases de datos de manera facil y sencilla.",
+        "url": "https://queryeditor.com"
+      },
+      "slugtree": {
+        "title": "slugtree",
+        "description": "Biblioteca que genera el árbol de contenido a partir de archivos MDX.",
+        "url": "/slugtree"
+      },
+      "use-handler-hooks": {
+        "title": "use-handler-hooks",
+        "description": "Hooks de React para manejar el estado y envío de formularios.",
+        "url": "/use-handler-hooks"
+      },
+      "anni": {
+        "title": "Anni",
+        "description": "Sistema de notificaciones simple, atractivo y fácil de usar",
+        "url": "/anni"
+      },
+      "graph-peru": {
+        "title": "graph-peru",
+        "description": "API REST y GraphQL para obtener datos de RENIEC y SUNAT.",
+        "url": "/graph-peru"
+      },
+      "zen-macify": {
+        "title": "zen-macify",
+        "description": "Un mod CSS para Zen Browser (Windows)",
+        "url": "https://github.com/daustinn/zen-macify"
+      }
+    }
+  },
+  "updated-on": "Actualizado el",
+  "see-all-projects": "Ver todos los proyectos"
+}

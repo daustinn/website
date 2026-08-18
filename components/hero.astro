@@ -1,0 +1,37 @@
+---
+import { t } from '@/translations'
+import { QUERY_EDITOR } from '@/const'
+import ArrowBack from '@/assets/arrow-back.svg'
+---
+
+<section class="container">
+  <p class="text-lg pt-10 md:pt-20 font-semibold">
+    {t('greeting', Astro.url)} 👋
+  </p>
+  <p>
+    {t('gretting-meta', Astro.url)}
+  </p>
+
+  <div class="md:pl-10 pt-5">
+    <a
+      href={QUERY_EDITOR.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group w-full py-2 inline-block"
+    >
+      <span class="block font-bold">
+        {t('projects.items.queryeditor.title', Astro.url)}
+      </span>
+      <p class="text-sm block opacity-80 py-1">
+        {t('projects.items.queryeditor.description', Astro.url)}
+      </p>
+      <span class="flex text-sm items-center gap-1 font-semibold">
+        Learn more
+        <ArrowBack
+          width={15}
+          class="rotate-180 transition-[translate] translate-y-0.5 group-hover:translate-x-2"
+        />
+      </span>
+    </a>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+name: Update timestamp
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-timestamp:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write date to UPDATED
+        run: echo -n "$(date -u +'%m-%d-%Y')" > UPDATED
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add UPDATED
+          git diff --cached --quiet || git commit -m "chore: update timestamp [skip ci]"
+          git push

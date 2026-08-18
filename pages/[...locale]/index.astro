@@ -1,0 +1,17 @@
+---
+import Experiences from '@/components/experiences.astro'
+import Hero from '@/components/hero.astro'
+import Projects from '@/components/projects.astro'
+import { LANGUAGES } from '@/const'
+import Root from '@/layouts/root.astro'
+
+export function getStaticPaths() {
+  return LANGUAGES.map((locale) => ({ params: { locale } }))
+}
+---
+
+<Root>
+  <Hero />
+  <Experiences />
+  <Projects />
+</Root>
