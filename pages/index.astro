@@ -3,10 +3,11 @@ export const prerender = true
 ---
 
 <script>
-  const LOCALE_KEY = 'locale'
+  import { LOCALE_KEY, LANGUAGES } from '@/const'
+
   const stored = localStorage.getItem(LOCALE_KEY)
 
-  if (stored === 'es' || stored === 'en') {
+  if (stored && LANGUAGES.includes(stored as (typeof LANGUAGES)[number])) {
     window.location.replace(`/${stored}`)
   } else {
     const lang = navigator.language || navigator.languages?.[0] || 'en'

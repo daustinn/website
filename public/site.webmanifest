@@ -1,0 +1,17 @@
+{
+  "name": "Daustinn",
+  "short_name": "Daustinn",
+  "description": "Software engineer based in Ayacucho, Peru.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5e9e1",
+  "theme_color": "#f5e9e1",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.avif",
+      "sizes": "500x500",
+      "type": "image/avif"
+    }
+  ]
+}

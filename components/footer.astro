@@ -2,11 +2,8 @@
 import { DAUSTINN } from '@/const'
 import updatedRaw from '@/UPDATED?raw'
 import { t, getLocaleByUrl } from '@/translations'
-
 const date = new Date(updatedRaw)
-
 const locale = getLocaleByUrl(Astro.url)
-
 const formatted = date.toLocaleDateString(locale, {
   month: 'short',
   day: 'numeric',
@@ -18,18 +15,56 @@ const formatted = date.toLocaleDateString(locale, {
   <p
     class="text-center opacity-60 uppercase font-mono text-xs font-semibold pt-5"
   >
-    {t('updated-on', Astro.url)}{' '}{formatted}
+    {t('updated-on', Astro.url)}{' '}<time datetime={date.toISOString()}
+      >{formatted}</time
+    >
   </p>
-  <div
+  <nav
+    aria-label="Footer navigation"
     class="grid grid-cols-2 md:flex container text-xs font-semibold [&>a]:hover:underline [&>a]:opacity-60 [&>a]:hover:opacity-100 [&>a]:w-full text-center [&>a]:py-5"
   >
-    <a href={`mailto:${DAUSTINN.mail}`} aria-label="Mail"> MAIL </a>
-    <a href={DAUSTINN.githubURL} aria-label="GitHub"> GITHUB </a>
-    <a href={DAUSTINN.xURL} aria-label="X"> X </a>
-    <a href={DAUSTINN.linkedinURL} aria-label="LinkedIn"> LINKEDIN </a>
-    <a href={DAUSTINN.sourceCodeURL} aria-label="Source Code"> SOURCE CODE </a>
-    <a href={DAUSTINN.bmc} aria-label="Buy Me a Coffee" title="Buy Me a Coffee">
+    <a href={`mailto:${DAUSTINN.mail}`} aria-label="Send an email to Daustinn">
+      MAIL
+    </a>
+    <a
+      href={DAUSTINN.githubURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub profile"
+    >
+      GITHUB
+    </a>
+    <a
+      href={DAUSTINN.xURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="X (Twitter) profile"
+    >
+      X
+    </a>
+    <a
+      href={DAUSTINN.linkedinURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn profile"
+    >
+      LINKEDIN
+    </a>
+    <a
+      href={DAUSTINN.sourceCodeURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Website source code"
+    >
+      SOURCE CODE
+    </a>
+    <a
+      href={DAUSTINN.bmc}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Buy Me a Coffee"
+    >
       BMC
     </a>
-  </div>
+  </nav>
 </footer>

@@ -1,16 +1,24 @@
 ---
 import '@/styles/global.css'
 import Header from '@/components/header.astro'
-import avatar from '@/assets/avatar.avif'
 import seo from '@/const/seo'
 import Footer from '@/components/footer.astro'
 
 export type Props = {
   title?: string
   description?: string
+  locale?: string
 }
 
-const { title = seo.title, description = seo.description } = Astro.props
+const {
+  title = seo.title,
+  description = seo.description,
+  locale = 'en'
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, seo.url).toString()
+const ogLocale = locale === 'es' ? 'es_PE' : 'en_US'
+const ogImageURL = `${seo.url}${seo.ogImage}`
 ---
 
 <!doctype html>
@@ -18,11 +26,44 @@ const { title = seo.title, description = seo.description } = Astro.props
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={avatar.src} type="image/avif" />
+    <link rel="icon" href="/favicon.avif" type="image/avif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
       {title}
     </title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={seo.keywords.join(', ')} />
+    <meta name="author" content={seo.author} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content={seo.themeColor} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={`${seo.url}/en`} />
+    <link rel="alternate" hreflang="es" href={`${seo.url}/es`} />
+    <link rel="alternate" hreflang="x-default" href={seo.url} />
+    <link
+      rel="preload"
+      href="/young-serif.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:site_name" content={seo.siteName} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={seo.twitter} />
+    <meta name="twitter:creator" content={seo.twitter} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(seo.jsonLd)} />
   </head>
   <body class="min-h-svh flex flex-col">
     <Header />

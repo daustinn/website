@@ -5,13 +5,12 @@ import ArrowBack from '@/assets/arrow-back.svg'
 ---
 
 <section class="container">
-  <p class="text-lg pt-10 md:pt-20 font-semibold">
+  <h1 class="text-lg pt-10 md:pt-20 font-semibold">
     {t('greeting', Astro.url)} 👋
-  </p>
+  </h1>
   <p>
     {t('gretting-meta', Astro.url)}
   </p>
-
   <div class="md:pl-10 pt-5">
     <a
       href={QUERY_EDITOR.url}
@@ -26,7 +25,7 @@ import ArrowBack from '@/assets/arrow-back.svg'
         {t('projects.items.queryeditor.description', Astro.url)}
       </p>
       <span class="flex text-sm items-center gap-1 font-semibold">
-        Learn more
+        {t('learn-more', Astro.url)}
         <ArrowBack
           width={15}
           class="rotate-180 transition-[translate] translate-y-0.5 group-hover:translate-x-2"

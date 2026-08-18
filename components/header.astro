@@ -3,32 +3,43 @@ import Github from '@/assets/github.svg'
 import Globe from '@/assets/globe.svg'
 import X from '@/assets/x.svg'
 import { t, getLocaleByUrl, toggleLocale } from '@/translations'
-
 import { DAUSTINN, LANGUAGES } from '@/const'
-
 const locale = getLocaleByUrl(Astro.url)
 ---
 
 <header class="pt-5 md:pt-20">
-  <nav class="container flex">
+  <nav class="container flex" aria-label="Main navigation">
     <div class="grow">
-      <h1 class="text-xl font-young-serif font-normal">Daustinn.</h1>
-      <h2 class="tracking-tight font-semibold opacity-60">
+      <p class="text-xl font-young-serif font-normal" aria-label="Daustinn">
+        Daustinn.
+      </p>
+      <p class="tracking-tight font-semibold opacity-60">
         {t('role', Astro.url)}
-      </h2>
+      </p>
     </div>
     <div
       class="flex items-center [&>a]:hover:scale-110 [&>a]:transition-transform [&>a]:px-3 [&>a]:inline-flex"
     >
-      <a href={DAUSTINN.githubURL} target="_blank" rel="noopener noreferrer">
+      <a
+        href={DAUSTINN.githubURL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub profile"
+      >
         <Github width={19} />
       </a>
-      <a href={DAUSTINN.xURL} target="_blank" rel="noopener noreferrer">
+      <a
+        href={DAUSTINN.xURL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="X (Twitter) profile"
+      >
         <X width={19} />
       </a>
       <a
         href={toggleLocale(Astro.url)}
         class="font-semibold text-sm flex gap-1"
+        aria-label={`Switch to ${locale === 'es' ? 'English' : 'Spanish'}`}
         data-toggle-locale={toggleLocale(Astro.url)
           .replace(/^\//, '')
           .split('/')[0]}
