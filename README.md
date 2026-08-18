@@ -4,7 +4,7 @@
 [![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white)](https://cloudflare.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-Personal portfolio of David Bendezú (Daustinn) — Software Engineer based in Ayacucho, Peru.
+Personal portfolio of Daustinn
 
 ## Stack
 
@@ -15,9 +15,9 @@ Personal portfolio of David Bendezú (Daustinn) — Software Engineer based in A
 
 ## Commands
 
-| Command | Description |
-| :-------------- | :---------------------------------- |
-| `bun install` | Install dependencies |
-| `bun dev` | Dev server at `localhost:4321` |
-| `bun build` | Build to `./dist/` |
-| `bun preview` | Preview build locally |
+| Command       | Description                    |
+| :------------ | :----------------------------- |
+| `bun install` | Install dependencies           |
+| `bun dev`     | Dev server at `localhost:4321` |
+| `bun build`   | Build to `./dist/`             |
+| `bun preview` | Preview build locally          |

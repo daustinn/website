@@ -35,13 +35,13 @@ export const getLocaleByUrl = (url: URL) => {
 export const toggleLocale = (url: URL) => {
   const currentLocale = getLocaleByUrl(url)
   const newLocale = currentLocale === 'es' ? 'en' : 'es'
-  return new URL(url.toString().replace(currentLocale, newLocale))
+  return url.pathname.replace(`/${currentLocale}`, `/${newLocale}`)
 }
 
 export const href = (url: URL, to: string) => {
   const locale = getLocaleByUrl(url)
   const path = to.replace(/^\//, '')
-  return new URL(url.toString().replace(url.pathname, `/${locale}/${path}`))
+  return `/${locale}/${path}`
 }
 
 const resolve = (obj: Record<string, unknown>, path: string): unknown => {

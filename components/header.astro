@@ -29,6 +29,9 @@ const locale = getLocaleByUrl(Astro.url)
       <a
         href={toggleLocale(Astro.url)}
         class="font-semibold text-sm flex gap-1"
+        data-toggle-locale={toggleLocale(Astro.url)
+          .replace(/^\//, '')
+          .split('/')[0]}
       >
         <Globe width={19} />
         {
@@ -45,3 +48,13 @@ const locale = getLocaleByUrl(Astro.url)
     </div>
   </nav>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLAnchorElement>(
+    '[data-toggle-locale]'
+  )
+  toggle?.addEventListener('click', () => {
+    const next = toggle.dataset.toggleLocale
+    if (next) localStorage.setItem('locale', next)
+  })
+</script>

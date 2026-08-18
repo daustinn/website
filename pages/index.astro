@@ -3,7 +3,15 @@ export const prerender = true
 ---
 
 <script>
-  const lang = navigator.language || navigator.languages?.[0] || 'en'
-  const locale = lang.toLowerCase().startsWith('es') ? 'es' : 'en'
-  window.location.replace(`/${locale}`)
+  const LOCALE_KEY = 'locale'
+  const stored = localStorage.getItem(LOCALE_KEY)
+
+  if (stored === 'es' || stored === 'en') {
+    window.location.replace(`/${stored}`)
+  } else {
+    const lang = navigator.language || navigator.languages?.[0] || 'en'
+    const locale = lang.toLowerCase().startsWith('es') ? 'es' : 'en'
+    localStorage.setItem(LOCALE_KEY, locale)
+    window.location.replace(`/${locale}`)
+  }
 </script>
