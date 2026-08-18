@@ -1,0 +1,35 @@
+---
+import { DAUSTINN } from '@/const'
+import updatedRaw from '@/updated?raw'
+import { t, getLocaleByUrl } from '@/translations'
+
+const date = new Date(updatedRaw)
+
+const locale = getLocaleByUrl(Astro.url)
+
+const formatted = date.toLocaleDateString(locale, {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric'
+})
+---
+
+<footer class="border-t mt-10">
+  <p
+    class="text-center opacity-60 uppercase font-mono text-xs font-semibold pt-5"
+  >
+    {t('updated-on', Astro.url)}{' '}{formatted}
+  </p>
+  <div
+    class="grid grid-cols-2 md:flex container text-xs font-semibold [&>a]:hover:underline [&>a]:opacity-60 [&>a]:hover:opacity-100 [&>a]:w-full text-center [&>a]:py-5"
+  >
+    <a href={`mailto:${DAUSTINN.mail}`} aria-label="Mail"> MAIL </a>
+    <a href={DAUSTINN.githubURL} aria-label="GitHub"> GITHUB </a>
+    <a href={DAUSTINN.xURL} aria-label="X"> X </a>
+    <a href={DAUSTINN.linkedinURL} aria-label="LinkedIn"> LINKEDIN </a>
+    <a href={DAUSTINN.sourceCodeURL} aria-label="Source Code"> SOURCE CODE </a>
+    <a href={DAUSTINN.bmc} aria-label="Buy Me a Coffee" title="Buy Me a Coffee">
+      BMC
+    </a>
+  </div>
+</footer>

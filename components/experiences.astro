@@ -1,0 +1,28 @@
+---
+import { t } from '@/translations'
+const experiences = Object.values(t('experience.items', Astro.url))
+---
+
+<section class="container pt-10">
+  <h3
+    aria-label="Experience title"
+    class="font-medium md:pl-10 text-sm opacity-30 font-young-serif"
+  >
+    {t('experience.title', Astro.url)}
+  </h3>
+  <ul class="pt-2 md:pl-10">
+    {
+      experiences.map((value) => {
+        return (
+          <li class="group py-2">
+            <span class="block font-bold">
+              {value.businessName},{' '}
+              <span class="text-sm opacity-60 font-mono">{value.from}</span>
+            </span>
+            <p class="text-sm block opacity-80 py-1">{value.role}</p>
+          </li>
+        )
+      })
+    }
+  </ul>
+</section>

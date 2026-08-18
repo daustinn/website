@@ -1,0 +1,61 @@
+---
+import { t, href } from '@/translations'
+import ArrowBack from '@/assets/arrow-back.svg'
+import { DAUSTINN } from '@/const'
+
+const projects = Object.values(t('projects.items', Astro.url))
+---
+
+<section class="container pt-10">
+  <h3
+    aria-label="Projects title"
+    class="font-medium md:pl-10 text-sm opacity-30 font-young-serif"
+  >
+    {t('projects.title', Astro.url)}
+  </h3>
+  <ul class="pt-2 md:pl-10">
+    {
+      projects.map((value) => {
+        return (
+          <li class="group py-3">
+            <a
+              href={
+                value.url.startsWith('https')
+                  ? value.url
+                  : href(Astro.url, value.url)
+              }
+              target={value.url.startsWith('https') ? '_blank' : undefined}
+              rel={
+                value.url.startsWith('https')
+                  ? 'noopener noreferrer'
+                  : undefined
+              }
+              class="group w-full py-2 inline-block"
+            >
+              <span class="block font-bold">{value.title}</span>
+              <p class="text-sm block opacity-80 py-1">{value.description}</p>
+              <span class="flex text-sm items-center gap-1 font-semibold">
+                Learn more
+                <ArrowBack
+                  width={15}
+                  class="rotate-180 transition-[translate] translate-y-0.5 group-hover:translate-x-2"
+                />
+              </span>
+            </a>
+          </li>
+        )
+      })
+    }
+
+    <li>
+      <a
+        class="py-1 text-sm font-semibold opacity-60 hover:opacity-80"
+        href={DAUSTINN.githubURL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t('see-all-projects', Astro.url)}
+      </a>
+    </li>
+  </ul>
+</section>

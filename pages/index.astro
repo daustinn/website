@@ -1,0 +1,9 @@
+---
+export const prerender = false
+
+const language = Astro.request.headers.get('accept-language') ?? ''
+
+const locale = language.toLowerCase().startsWith('es') ? 'es' : 'en'
+
+return Astro.redirect(`/${locale}`)
+---
