@@ -15,11 +15,7 @@ const projects = Object.values(t('projects.items', Astro.url))
         return (
           <li class="group py-3">
             <a
-              href={
-                value.url.startsWith('https')
-                  ? value.url
-                  : href(Astro.url, value.url)
-              }
+              href={value.url}
               target={value.url.startsWith('https') ? '_blank' : undefined}
               rel={
                 value.url.startsWith('https')
