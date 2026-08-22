@@ -32,13 +32,13 @@
       },
       "slugtree": {
         "title": "slugtree",
-        "description": "Biblioteca que genera el árbol de contenido a partir de archivos MDX.",
+        "description": "Hooks de React basados en eventos y callbacks.",
         "url": "/slugtree"
       },
-      "use-handler-hooks": {
-        "title": "use-handler-hooks",
+      "react-callback-hooks": {
+        "title": "react-callback-hooks",
         "description": "Hooks de React para manejar el estado y envío de formularios.",
-        "url": "/use-handler-hooks"
+        "url": "/react-callback-hooks"
       },
       "anni": {
         "title": "Anni",

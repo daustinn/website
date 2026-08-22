@@ -35,10 +35,10 @@
         "description": "Library that generates a content tree from MDX files.",
         "url": "/slugtree"
       },
-      "use-handler-hooks": {
-        "title": "use-handler-hooks",
+      "react-callback-hooks": {
+        "title": "react-callback-hooks",
         "description": "A set of React hooks for handling form state and submission",
-        "url": "/use-handler-hooks"
+        "url": "/react-callback-hooks"
       },
       "anni": {
         "title": "Anni",
