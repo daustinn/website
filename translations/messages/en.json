@@ -37,7 +37,7 @@
       },
       "react-callback-hooks": {
         "title": "react-callback-hooks",
-        "description": "A set of React hooks for handling form state and submission",
+        "description": "React hooks that react to events with callbacks.",
         "url": "/react-callback-hooks"
       },
       "anni": {

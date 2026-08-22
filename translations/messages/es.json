@@ -37,7 +37,7 @@
       },
       "react-callback-hooks": {
         "title": "react-callback-hooks",
-        "description": "Hooks de React para manejar el estado y envío de formularios.",
+        "description": "Hooks de React basados en eventos y callbacks.",
         "url": "/react-callback-hooks"
       },
       "anni": {
