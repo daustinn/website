@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Daustinn (David Bendezú) — Software Engineer",
+    "description": "Software engineer based in Ayacucho, Peru. I turn ideas into products with a focus on quality and user experience.",
+    "keywords": "David Bendezú, Daustinn, Software Engineer, Web Developer, Ayacucho Peru, Full Stack Developer, React, Astro, TypeScript, Cloudflare"
+  },
   "role": "Software Engineer",
   "greeting": "What's up?",
   "gretting-meta": "I turn ideas into products, with a focus on quality and user experience.",

@@ -1,7 +1,7 @@
 {
-  "name": "Daustinn",
+  "name": "Daustinn (David Bendezú)",
   "short_name": "Daustinn",
-  "description": "Software engineer based in Ayacucho, Peru.",
+  "description": "Software engineer based in Ayacucho, Peru. I turn ideas into products with a focus on quality and user experience.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f5e9e1",
@@ -11,7 +11,9 @@
     {
       "src": "/favicon.avif",
       "sizes": "500x500",
-      "type": "image/avif"
+      "type": "image/avif",
+      "purpose": "any maskable"
     }
   ]
 }
+

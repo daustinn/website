@@ -1,18 +1,31 @@
 ---
+import Root from '@/layouts/root.astro'
+
 export const prerender = true
 ---
 
-<script>
-  import { LOCALE_KEY, LANGUAGES } from '@/const'
+<Root locale="en">
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/en" />
+    <p class="p-6 text-center">
+      Redirecting to <a href="/en" class="underline">English</a> or <a
+        href="/es"
+        class="underline">Español</a
+      >...
+    </p>
+  </noscript>
+  <script>
+    import { LOCALE_KEY, LANGUAGES } from '@/const'
 
-  const stored = localStorage.getItem(LOCALE_KEY)
+    const stored = localStorage.getItem(LOCALE_KEY)
 
-  if (stored && LANGUAGES.includes(stored as (typeof LANGUAGES)[number])) {
-    window.location.replace(`/${stored}`)
-  } else {
-    const lang = navigator.language || navigator.languages?.[0] || 'en'
-    const locale = lang.toLowerCase().startsWith('es') ? 'es' : 'en'
-    localStorage.setItem(LOCALE_KEY, locale)
-    window.location.replace(`/${locale}`)
-  }
-</script>
+    if (stored && LANGUAGES.includes(stored as (typeof LANGUAGES)[number])) {
+      window.location.replace(`/${stored}`)
+    } else {
+      const lang = navigator.language || navigator.languages?.[0] || 'en'
+      const locale = lang.toLowerCase().startsWith('es') ? 'es' : 'en'
+      localStorage.setItem(LOCALE_KEY, locale)
+      window.location.replace(`/${locale}`)
+    }
+  </script>
+</Root>

@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Daustinn (David Bendezú) — Ingeniero de Software",
+    "description": "Ingeniero de software en Ayacucho, Perú. Convierto ideas en productos con un enfoque en la calidad y la experiencia del usuario.",
+    "keywords": "David Bendezú, Daustinn, Ingeniero de Software, Desarrollador Web, Ayacucho Perú, Desarrollador Full Stack, React, Astro, TypeScript, Cloudflare"
+  },
   "role": "Ingeniero de Software",
   "greeting": "Hola, ¿Qué tal?",
   "gretting-meta": "Convierto ideas en productos, con un enfoque en la calidad y la experiencia del usuario.",
