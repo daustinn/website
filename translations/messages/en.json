@@ -33,7 +33,7 @@
       "slugtree": {
         "title": "slugtree",
         "description": "Library that generates a content tree from MDX files.",
-        "url": "/slugtree"
+        "url": "https://slugtree.daustinn.com"
       },
       "react-callback-hooks": {
         "title": "react-callback-hooks",

@@ -1,6 +1,7 @@
 ---
 import Github from '@/assets/github.svg'
 import Globe from '@/assets/globe.svg'
+import Whatsapp from '@/assets/whatsapp.svg'
 import X from '@/assets/x.svg'
 import { t, getLocaleByUrl, toggleLocale } from '@/translations'
 import { DAUSTINN, LANGUAGES } from '@/const'
@@ -35,6 +36,14 @@ const locale = getLocaleByUrl(Astro.url)
         aria-label="X (Twitter) profile"
       >
         <X width={19} />
+      </a>
+      <a
+        href={DAUSTINN.whatsappURL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp profile"
+      >
+        <Whatsapp width={21} />
       </a>
       <a
         href={toggleLocale(Astro.url)}

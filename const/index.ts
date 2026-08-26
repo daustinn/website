@@ -8,6 +8,7 @@ export const DAUSTINN = {
   xURL: 'https://x.com/daustinndev',
   linkedinURL: 'https://www.linkedin.com/in/daustinn',
   sourceCodeURL: 'https://github.com/daustinn/website',
+  whatsappURL: 'https://wa.me/daustinn',
   bmc: 'https://www.buymeacoffee.com/daustinn'
 } as const
 
