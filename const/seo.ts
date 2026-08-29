@@ -10,11 +10,11 @@ export const seoConfig = {
   ogImageType: 'image/png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  defaultTitle: `${DAUSTINN.alias} (${DAUSTINN.name}) — Software Engineer`,
+  defaultTitle: `${DAUSTINN.alias} (${DAUSTINN.name}) — Software Developer`,
   defaultDescription:
-    'Software engineer based in Ayacucho, Peru. I turn ideas into products with a focus on quality and user experience.',
+    'Software developer based in Ayacucho, Peru. I turn ideas into products with a focus on quality and user experience.',
   defaultKeywords:
-    'David Bendezú, Daustinn, Software Engineer, Web Developer, Ayacucho Peru, Full Stack Developer, React, Astro, TypeScript, Cloudflare'
+    'David Bendezú, Daustinn, Software Developer, Web Developer, Ayacucho Peru, Full Stack Developer, React, Astro, TypeScript, Cloudflare'
 } as const
 
 export const getJsonLd = ({
@@ -57,7 +57,7 @@ export const getJsonLd = ({
           url: ogImageUrl,
           caption: `${DAUSTINN.name} (${DAUSTINN.alias})`
         },
-        jobTitle: isEs ? 'Ingeniero de Software' : 'Software Engineer',
+        jobTitle: isEs ? 'Desarrollador de Software' : 'Software Developer',
         email: `mailto:${DAUSTINN.mail}`,
         address: {
           '@type': 'PostalAddress',
