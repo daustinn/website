@@ -53,6 +53,17 @@ const jsonLd = jsonLdProp ?? getJsonLd({
       type="font/woff2"
       crossorigin="anonymous"
     />
+    {
+      ogImage && (
+        <link
+          rel="preload"
+          href={ogImage}
+          as="image"
+          type="image/avif"
+        />
+      )
+    }
+    <slot name="head" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
