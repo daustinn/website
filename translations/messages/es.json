@@ -33,36 +33,47 @@
       "queryeditor": {
         "title": "QueryEditor",
         "description": "Cliente SQL Para adminsitrar bases de datos de manera facil y sencilla.",
-        "url": "https://queryeditor.com"
+        "url": "/queryeditor",
+        "photoURL": "/queryeditor.png"
       },
       "slugtree": {
         "title": "slugtree",
         "description": "Hooks de React basados en eventos y callbacks.",
-        "url": "https://slugtree.daustinn.com"
+        "url": "/slugtree",
+        "photoURL": "/slugtree.png"
       },
       "react-callback-hooks": {
         "title": "react-callback-hooks",
         "description": "Hooks de React basados en eventos y callbacks.",
-        "url": "https://react-callback-hooks.daustinn.com"
+        "url": "/react-callback-hooks",
+        "photoURL": "/react-callback-hooks.png"
       },
       "anni": {
         "title": "Anni",
         "description": "Sistema de notificaciones simple, atractivo y fácil de usar",
-        "url": "https://anni.daustinn.com"
+        "url": "/anni",
+        "photoURL": null
       },
       "graph-peru": {
         "title": "graph-peru",
         "description": "API REST y GraphQL para obtener datos de RENIEC y SUNAT.",
-        "url": "/graph-peru"
+        "url": "/graph-peru",
+        "photoURL": null
       },
       "zen-macify": {
         "title": "zen-macify",
         "description": "Un mod CSS para Zen Browser (Windows)",
-        "url": "https://github.com/daustinn/zen-macify"
+        "url": "https://github.com/daustinn/zen-macify",
+        "photoURL": null
       }
     }
   },
   "updated-on": "Actualizado el",
-  "see-all-projects": "Ver todos los proyectos",
-  "learn-more": "Ver más"
+  "see-more": "Ver más",
+  "learn-more": "Ver más",
+  "things-i-have-done-recently": "Algunos de mis últimos trabajos",
+  "work": "Trabajos",
+  "try": "Probar",
+  "now": "ahora",
+  "back": "Atrás"
 }
