@@ -1,9 +1,8 @@
 ---
 import Github from '@/assets/github.svg'
 import Globe from '@/assets/globe.svg'
-import Whatsapp from '@/assets/whatsapp.svg'
 import X from '@/assets/x.svg'
-import { t, getLocaleByUrl, toggleLocale } from '@/translations'
+import { t, getLocaleByUrl, toggleLocale, href } from '@/translations'
 import { DAUSTINN, LANGUAGES } from '@/const'
 const locale = getLocaleByUrl(Astro.url)
 ---
@@ -11,12 +10,17 @@ const locale = getLocaleByUrl(Astro.url)
 <header class="pt-5 md:pt-20">
   <nav class="container flex" aria-label="Main navigation">
     <div class="grow">
-      <p class="text-xl font-young-serif font-normal" aria-label="Daustinn">
-        Daustinn.
-      </p>
-      <p class="tracking-tight font-semibold opacity-60">
+      <a href={href(Astro.url, '/')} class="hover:underline">
+        <span
+          class="text-xl font-young-serif font-normal"
+          aria-label="Daustinn"
+        >
+          Daustinn.
+        </span>
+      </a>
+      <h1 class="tracking-tight font-semibold opacity-60">
         {t('role', Astro.url)}
-      </p>
+      </h1>
     </div>
     <div
       class="flex items-center [&>a]:hover:scale-110 [&>a]:transition-transform [&>a]:px-3 [&>a]:inline-flex"
@@ -36,14 +40,6 @@ const locale = getLocaleByUrl(Astro.url)
         aria-label="X (Twitter) profile"
       >
         <X width={19} />
-      </a>
-      <a
-        href={DAUSTINN.whatsappURL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp profile"
-      >
-        <Whatsapp width={21} />
       </a>
       <a
         href={toggleLocale(Astro.url)}
