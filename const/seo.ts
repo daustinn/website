@@ -68,7 +68,6 @@ export const getJsonLd = ({
           DAUSTINN.githubURL,
           DAUSTINN.xURL,
           DAUSTINN.linkedinURL,
-          DAUSTINN.whatsappURL,
           DAUSTINN.bmc
         ],
         knowsAbout: [
@@ -99,6 +98,69 @@ export const getJsonLd = ({
           '@id': `${seoConfig.url}/#person`
         },
         inLanguage: isEs ? 'es-PE' : 'en-US'
+      }
+    ]
+  }
+}
+
+export const getArticleJsonLd = ({
+  url,
+  title,
+  description,
+  locale,
+  image
+}: {
+  url: string
+  title: string
+  description: string
+  locale: 'en' | 'es'
+  image?: string
+}) => {
+  const isEs = locale === 'es'
+  const ogImageUrl = image
+    ? new URL(image, seoConfig.url).toString()
+    : `${seoConfig.url}${seoConfig.ogImage}`
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': `${url}#article`,
+        url,
+        name: title,
+        headline: title,
+        description,
+        inLanguage: isEs ? 'es-PE' : 'en-US',
+        image: {
+          '@type': 'ImageObject',
+          url: ogImageUrl
+        },
+        author: {
+          '@id': `${seoConfig.url}/#person`
+        },
+        publisher: {
+          '@id': `${seoConfig.url}/#person`
+        },
+        isPartOf: {
+          '@id': `${seoConfig.url}/#website`
+        }
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${seoConfig.url}/#website`,
+        url: seoConfig.url,
+        name: seoConfig.siteName,
+        publisher: {
+          '@id': `${seoConfig.url}/#person`
+        }
+      },
+      {
+        '@type': 'Person',
+        '@id': `${seoConfig.url}/#person`,
+        name: DAUSTINN.name,
+        alternateName: [DAUSTINN.alias, 'daustinndev'],
+        url: seoConfig.url
       }
     ]
   }
