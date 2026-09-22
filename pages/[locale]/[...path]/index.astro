@@ -1,0 +1,99 @@
+---
+import { getNodeData, getSlugs } from 'slugtree'
+import Root from '@/layouts/root.astro'
+import ArrowBack from '@/assets/arrow-back.svg'
+import { t } from '@/translations'
+import { marked } from 'marked'
+import { createHighlighter } from 'shiki'
+
+export const getStaticPaths = () =>
+  getSlugs().map((slug) => ({
+    params: {
+      locale: slug[0],
+      path: slug.slice(1).join('/')
+    },
+    props: { slug }
+  }))
+
+const { slug } = Astro.props
+
+const data = getNodeData(slug)
+
+const highlighter = await createHighlighter({
+  themes: ['andromeeda'],
+  langs: ['typescript', 'tsx', 'json', 'bash']
+})
+
+const renderer = new marked.Renderer()
+
+renderer.code = ({ text, lang }) => {
+  const language = lang || 'text'
+
+  const html = highlighter.codeToHtml(text, {
+    lang: language,
+    theme: 'andromeeda'
+  })
+
+  return html
+}
+
+const html = data ? await marked.parse(data.rawContent, { renderer }) : ''
+---
+
+<Root>
+  <nav class="border-t pt-5 mt-6">
+    <div class="container">
+      <button
+        id="back-button"
+        class="flex text-sm items-center font-semibold gap-2 hover:bg-white/80 rounded-lg px-3 py-1"
+      >
+        <ArrowBack width={18} />
+        {t('back', Astro.url)}
+      </button>
+    </div>
+  </nav>
+  <main class="container">
+    <header class="py-10 text-center space-y-2">
+      <h2 class="font-young-serif text-4xl font-medium">
+        {data?.frontMatter.title}
+      </h2>
+      <p class="text-base max-w-[70%] mx-auto text-center text-balance">
+        {data?.frontMatter.description}
+      </p>
+      {
+        data?.frontMatter.site && (
+          <a
+            href={String(data?.frontMatter.site)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-4! hover:scale-105 transition-[scale] text-sm rounded-2xl py-4 font-semibold bg-foreground text-background px-3"
+          >
+            {t('try', Astro.url)} {data?.frontMatter.title}{' '}
+            {t('now', Astro.url)}
+            <ArrowBack width={20} class="rotate-125 ml-2 inline-block" />
+          </a>
+        )
+      }
+      {
+        data?.frontMatter.image && (
+          <div class="overflow-hidden mt-5 border shadow-sm rounded-2xl">
+            <img
+              src={String(data?.frontMatter.image)}
+              alt={data.frontMatter.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        )
+      }
+    </header>
+    <section class="mb-10 prose__content" set:html={html} />
+  </main>
+</Root>
+
+<script>
+  import { $ } from '@/lib/dom'
+
+  $('#back-button')?.addEventListener('click', () => {
+    history.back()
+  })
+</script>
