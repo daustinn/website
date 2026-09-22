@@ -5,6 +5,7 @@ import ArrowBack from '@/assets/arrow-back.svg'
 import { t } from '@/translations'
 import { marked } from 'marked'
 import { createHighlighter } from 'shiki'
+import { getArticleJsonLd, seoConfig } from '@/const/seo'
 
 export const getStaticPaths = () =>
   getSlugs().map((slug) => ({
@@ -18,6 +19,23 @@ export const getStaticPaths = () =>
 const { slug } = Astro.props
 
 const data = getNodeData(slug)
+
+const locale = (slug[0] as 'en' | 'es') ?? 'en'
+const title = data?.frontMatter.title
+  ? `${data.frontMatter.title} — ${seoConfig.author}`
+  : seoConfig.defaultTitle
+const description = data?.frontMatter.description ?? seoConfig.defaultDescription
+const keywords = data?.frontMatter.keywords as string | undefined
+const ogImage = data?.frontMatter.image as string | undefined
+
+const canonicalURL = new URL(Astro.url.pathname, seoConfig.url).toString()
+const jsonLd = getArticleJsonLd({
+  url: canonicalURL,
+  title,
+  description,
+  locale,
+  image: ogImage
+})
 
 const highlighter = await createHighlighter({
   themes: ['andromeeda'],
@@ -40,7 +58,15 @@ renderer.code = ({ text, lang }) => {
 const html = data ? await marked.parse(data.rawContent, { renderer }) : ''
 ---
 
-<Root>
+<Root
+  locale={locale}
+  title={title}
+  description={description}
+  keywords={keywords}
+  ogImage={ogImage}
+  ogType="article"
+  jsonLd={jsonLd}
+>
   <nav class="border-t pt-5 mt-6">
     <div class="container">
       <button
