@@ -1,0 +1,54 @@
+---
+title: React Callback Hooks
+description: Hooks de React basados en eventos y callbacks.
+image: /react-callback-hooks__thumbnail.avif
+site: https://react-callback-hooks.daustinn.com
+---
+
+### Por qué existe esto
+
+Con los hooks típicos de React, si quieres reaccionar a un cambio, la mayoría de las veces terminas haciendo esto:
+
+```ts
+const { level } = useBattery()
+
+useEffect(() => {
+  if (level < 0.2) toast('Bateria baja')
+}, [level])
+```
+
+Funciona, pero es un patrón que se repite constantemente: leer el estado de un hook y poner un `useEffect` encima para disparar algo cuando ese estado cambia. Con `react-callback-hooks` eso se simplifica a un solo paso.
+
+### Cómo funciona
+
+Cada hook acepta callbacks que se ejecutan cuando ocurre algo. El hook sigue devolviendo el estado de siempre, pero ahora puedes reaccionar directamente sin `useEffect`:
+
+```ts
+const { level } = useBattery({
+  onLevelChange: (level) => {
+    if (level < 0.2) toast('Bateria baja')
+  }
+})
+```
+
+Lo mismo aplica para cosas como `useNetworkState`, donde quieres mostrar algo cuando el usuario pierde o recupera la conexión:
+
+```ts
+useNetworkState({
+  onOffline: () => toast('Sin conexion'),
+  onOnline: () => toast('Conexion restaurada')
+})
+```
+
+O `useKeyDown`, que es probablemente el que más se agradece: sin callbacks terminas poniendo un `useEffect` solo para detectar un `Ctrl+K` y abrir un command palette o hacer toggle de un sidebar:
+
+```ts
+useKeyDown('CtrlOrCmd+K', (e) => {
+  e.preventDefault()
+  setCommandOpen(true)
+})
+```
+
+La idea no es reinventar los hooks existentes, sino darles una capa de callback para que reaccionar a eventos sea algo directo y no un patrón de tres pasos.
+
+Puedes ver todos los hooks disponibles en [react-callback-hooks.daustinn.com](https://react-callback-hooks.daustinn.com).

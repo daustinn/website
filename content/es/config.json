@@ -1,0 +1,10 @@
+{
+  "$schema": "https://slugtree.daustinn.com/config.schema.json",
+  "nodes": [
+    "queryeditor",
+    "slugtree",
+    "react-callback-hooks",
+    "anni",
+    "graph-peru"
+  ]
+}

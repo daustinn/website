@@ -1,0 +1,28 @@
+---
+title: slugtree
+description: Generador de árbol de navegación fuertemente tipado para Next.js, Astro y React a partir de archivos MDX.
+image: /slugtree__thumbnail.avif
+site: https://slugtree.daustinn.com
+---
+
+### Por qué creé slugtree
+
+Cada vez que armaba una doc o un blog con archivos `.mdx`, terminaba peleando con lo mismo: las librerías existentes o vienen atadas a un framework específico, o traen un diseño predefinido que es un dolor personalizar. Quería organizar mis carpetas, definir el orden con un `config.json` y tener un árbol de navegación con tipado estricto, sin depender de ninguna UI en particular.
+
+Eso es slugtree.
+
+### Cómo funciona
+
+Defines tu contenido en `content/` y llamas las funciones donde las necesites:
+
+```ts
+import { getTree, getNodeData, getNodePagination } from 'slugtree'
+
+const tree = getTree()
+const page = getNodeData(['docs', 'quick-start'])
+const { prev, next } = getNodePagination(['docs', 'quick-start'])
+```
+
+Tiene integraciones para Astro, Next.js y Vite, soporte para React con hooks (`useTree()`, `useNode()`), y funciones puras para rutas, breadcrumbs y búsqueda sin ninguna UI fija.
+
+Puedes ver la documentación completa en [slugtree.daustinn.com](https://slugtree.daustinn.com/quick-start).
