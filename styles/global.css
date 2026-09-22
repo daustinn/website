@@ -10,7 +10,7 @@
 }
 
 :root {
-  --background: #f5e9e1;
+  --background: #f5f5f5;
   --foreground: #000000;
   --border: #d8d8d8;
   --accent: #f17713;
@@ -31,7 +31,7 @@
 }*/
 
 @utility container {
-  max-width: 40rem;
+  max-width: 45rem;
   margin-inline: auto;
   padding-inline: 1.5rem;
   @apply max-lg:px-4;
@@ -86,5 +86,75 @@ button {
   &:disabled {
     opacity: 0.6;
     pointer-events: none;
+  }
+}
+
+.prose__content {
+  @apply text-base text-foreground/90 leading-relaxed;
+
+  p {
+    @apply leading-6 text-foreground/85 my-4;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    scroll-margin-top: 5rem;
+    @apply font-medium font-young-serif text-foreground tracking-tight;
+    a {
+      @apply inline-flex items-center text-foreground transition-colors;
+    }
+  }
+
+  h2 {
+    @apply text-2xl mt-12 mb-4 pb-2 border-b border-border/40 font-semibold;
+  }
+
+  h3 {
+    @apply text-xl mt-8 mb-3 font-medium;
+  }
+
+  h4 {
+    @apply text-lg mt-6 mb-2 font-medium;
+  }
+
+  h5 {
+    @apply text-base mt-4 mb-2 font-medium;
+  }
+
+  h6 {
+    @apply text-xs mt-3 mb-1 uppercase tracking-wider text-foreground/60;
+  }
+
+  ul {
+    @apply my-4 pl-5 list-disc space-y-1.5 marker:text-foreground/40;
+  }
+
+  ol {
+    @apply my-4 pl-5 list-decimal space-y-1.5 marker:text-foreground/50 marker:font-medium;
+  }
+
+  li {
+    @apply leading-7 text-[15px] text-foreground/85 pl-1;
+  }
+
+  hr {
+    @apply my-8 border-border/50;
+  }
+
+  img {
+    @apply rounded-xl shadow-sm mx-auto mt-10 border;
+  }
+
+  a {
+    @apply text-accent underline;
+  }
+  pre {
+    @apply bg-background/50 p-4 text-sm rounded-xl overflow-x-auto;
   }
 }
