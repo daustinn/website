@@ -3,6 +3,8 @@ dist/
 
 # generated types
 .astro/
+.slugtree/
+.zed
 
 # dependencies
 node_modules/
