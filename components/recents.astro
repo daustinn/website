@@ -1,0 +1,79 @@
+---
+import { DAUSTINN } from '@/const'
+import { t } from '@/translations'
+import { getNode } from 'slugtree'
+const { locale } = Astro.params as { locale: 'es' | 'en' }
+import ArrowBack from '@/assets/arrow-back.svg'
+const folder = getNode([locale])
+
+const content =
+  folder?.type === 'folder'
+    ? folder.children.filter((item) => item.type !== 'label')
+    : []
+---
+
+<div class="bg-white rounded-3xl mt-10 py-10">
+  <section class="container">
+    <h2 class="font-medium text-2xl font-young-serif">
+      {t('work', Astro.url)}
+    </h2>
+    <p class="text-lg">
+      {t('things-i-have-done-recently', Astro.url)}
+    </p>
+    <ul class="py-2 grid gap-x-5 grid-cols-12">
+      {
+        content.map((item, i) => {
+          return (
+            <li
+              class={`group h-full py-3 ${i > 2 ? 'col-span-3' : 'col-span-4'}`}
+            >
+              <a
+                href={item.href}
+                target={item.href?.startsWith('https') ? '_blank' : undefined}
+                rel={
+                  item.href?.startsWith('https')
+                    ? 'noopener noreferrer'
+                    : undefined
+                }
+                class="group w-full h-full flex flex-col py-2"
+              >
+                {item.image && i < 3 ? (
+                  <div class="overflow-hidden group-hover:scale-103 transition-[scale] border shadow-xs rounded-xl">
+                    <img
+                      src={String(item.image)}
+                      alt={item.title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div />
+                )}
+                <h3 class="block pt-3 font-bold">{item.title}</h3>
+                <p class="text-sm block opacity-80 py-1 grow">
+                  {item.description}
+                </p>
+                <span class="flex text-sm items-center gap-1 font-semibold">
+                  {t('learn-more', Astro.url)}
+                  <ArrowBack
+                    width={15}
+                    class="rotate-180 transition-[translate] translate-y-0.5 group-hover:translate-x-2"
+                  />
+                </span>
+              </a>
+            </li>
+          )
+        })
+      }
+      <li class="col-span-3">
+        <a
+          class="py-1 text-sm font-semibold border rounded-xl h-full grid place-content-center opacity-60 hover:opacity-80"
+          href={DAUSTINN.githubURL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t('see-more', Astro.url)}
+        </a>
+      </li>
+    </ul>
+  </section>
+</div>
