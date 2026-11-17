@@ -5,7 +5,7 @@ import Root from '@/layouts/root.astro'
 export const prerender = true
 ---
 
-<Root locale="en" robots="noindex, follow" canonical={`${seoConfig.url}/en/`}>
+<Root locale="en" canonical={`${seoConfig.url}/en/`}>
   <Fragment slot="head">
     <noscript>
       <meta http-equiv="refresh" content="0;url=/en/" />
