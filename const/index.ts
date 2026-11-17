@@ -3,7 +3,6 @@ export const DAUSTINN = {
   name: 'David Bendezú',
   alias: 'Daustinn',
   mail: 'contact@daustinn.com',
-  location: 'Ayacucho, PE',
   githubURL: 'https://github.com/daustinn',
   xURL: 'https://x.com/daustinndev',
   linkedinURL: 'https://www.linkedin.com/in/daustinn',

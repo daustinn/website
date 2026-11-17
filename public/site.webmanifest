@@ -1,19 +1,18 @@
 {
   "name": "Daustinn (David Bendezú)",
   "short_name": "Daustinn",
-  "description": "Software developer based in Ayacucho, Peru. I turn ideas into products with a focus on quality and user experience.",
-  "start_url": "/",
+  "description": "Software Developer | Systems Engineering Background. I build modern software, developer tools, and web applications focused on quality and user experience.",
+  "start_url": "/en/",
   "display": "standalone",
-  "background_color": "#f5e9e1",
-  "theme_color": "#f5e9e1",
+  "background_color": "#f5f5f5",
+  "theme_color": "#f5f5f5",
   "lang": "en",
   "icons": [
     {
       "src": "/favicon.avif",
-      "sizes": "500x500",
+      "sizes": "460x460",
       "type": "image/avif",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
-

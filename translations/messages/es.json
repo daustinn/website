@@ -1,79 +1,63 @@
 {
   "seo": {
-    "title": "Daustinn (David Bendezú) — Desarrollador de Software",
-    "description": "Desarrollador de software en Ayacucho, Perú. Convierto ideas en productos con un enfoque en la calidad y la experiencia del usuario.",
-    "keywords": "David Bendezú, Daustinn, Desarrollador de Software, Desarrollador Web, Ayacucho Perú, Desarrollador Full Stack, React, Astro, TypeScript, Cloudflare"
+    "title": "Daustinn (David Bendezú) — Desarrollador de Software | Ingeniería de Sistemas",
+    "description": "David Bendezú (Daustinn) — Desarrollador de Software con formación en Ingeniería de Sistemas. Diseño y desarrollo de aplicaciones web, arquitectura en la nube y herramientas open-source.",
+    "keywords": "David Bendezú, Daustinn, Desarrollador de Software, Ingeniería de Sistemas, Desarrollador Web, Desarrollador Full Stack, Herramientas para Desarrolladores, React, Astro, TypeScript, Node.js, Cloudflare"
   },
-  "role": "Desarrollador de Software",
-  "greeting": "Hola, ¿Qué tal?",
-  "gretting-meta": "Convierto ideas en productos, con un enfoque en la calidad y la experiencia del usuario.",
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "work": "Proyectos",
+    "contact": "Contacto"
+  },
+  "role": "Desarrollador de Software | Ingeniería de Sistemas",
+  "greeting": "¿Que tal?",
+  "gretting-meta": "Soy David, diseño y desarrollo aplicaciones web, servicios backend y herramientas open-source, cuidando la arquitectura, el rendimiento y una experiencia de uso clara.",
+  "about": {
+    "label": "Sobre mí",
+    "bio": "Con formación en Ingeniería de Sistemas, trabajo a lo largo de todo el stack: desde el diseño de bases de datos e infraestructura en la nube hasta interfaces limpias y herramientas para desarrolladores."
+  },
   "experience": {
     "title": "Experiencia",
     "items": {
       "freelance": {
-        "businessName": "Desarrollador Freelance",
-        "role": "Desarrollador de Software",
-        "from": "Dic 2025"
+        "businessName": "Freelance",
+        "role": "Desarrollador de Software Independiente",
+        "description": "desarrollo integral de productos, integraciones con IA y librerías open-source, desplegados en AWS, Google Cloud, Vercel, Railway y Firebase.",
+        "from": "Dic 2025",
+        "dateTime": "2025-12"
       },
       "lp": {
         "businessName": "Grupo La Pontificia",
-        "role": "Desarrollador de Software y Devops",
-        "from": "Jun 2023"
+        "role": "Desarrollador de Software",
+        "description": "infraestructura y flujos DevOps, pipelines CI/CD, administración de servidores VPS y bases de datos, seguridad y mantenimiento en producción.",
+        "from": "Jun 2023",
+        "dateTime": "2023-06"
       },
       "acropolis": {
         "businessName": "Nueva Acrópolis",
-        "role": "Desarrollador Full Stack Freelance",
-        "from": "Abr 2022"
+        "role": "Desarrollador Full-Stack",
+        "description": "desarrollo de aplicaciones web con React, TypeScript, Vite y Supabase, incluyendo modelado de bases de datos y despliegue en producción con Vercel.",
+        "from": "Abr 2022",
+        "dateTime": "2022-04"
       }
     }
   },
-  "projects": {
-    "title": "Proyectos",
-    "items": {
-      "queryeditor": {
-        "title": "QueryEditor",
-        "description": "Cliente SQL Para adminsitrar bases de datos de manera facil y sencilla.",
-        "url": "/queryeditor",
-        "photoURL": "/queryeditor.png"
-      },
-      "slugtree": {
-        "title": "slugtree",
-        "description": "Hooks de React basados en eventos y callbacks.",
-        "url": "/slugtree",
-        "photoURL": "/slugtree.png"
-      },
-      "react-callback-hooks": {
-        "title": "react-callback-hooks",
-        "description": "Hooks de React basados en eventos y callbacks.",
-        "url": "/react-callback-hooks",
-        "photoURL": "/react-callback-hooks.png"
-      },
-      "anni": {
-        "title": "Anni",
-        "description": "Sistema de notificaciones simple, atractivo y fácil de usar",
-        "url": "/anni",
-        "photoURL": null
-      },
-      "graph-peru": {
-        "title": "graph-peru",
-        "description": "API REST y GraphQL para obtener datos de RENIEC y SUNAT.",
-        "url": "/graph-peru",
-        "photoURL": null
-      },
-      "zen-macify": {
-        "title": "zen-macify",
-        "description": "Un mod CSS para Zen Browser (Windows)",
-        "url": "https://github.com/daustinn/zen-macify",
-        "photoURL": null
-      }
-    }
+  "contact": {
+    "title": "Conversemos.",
+    "subtitle": "Si tienes un proyecto en mente o te gustaría colaborar, puedes escribirme directamente.",
+    "quickLinks": "Enlaces",
+    "social": "Redes"
   },
   "updated-on": "Actualizado el",
   "see-more": "Ver más",
-  "learn-more": "Ver más",
-  "things-i-have-done-recently": "Algunos de mis últimos trabajos",
-  "work": "Trabajos",
+  "learn-more": "Leer más",
+  "things-i-have-done-recently": "Algunos de mis últimos trabajos.",
+  "projects": "Projects",
   "try": "Probar",
   "now": "ahora",
-  "back": "Atrás"
+  "back": "Volver",
+  "more": "Más",
+  "moreInfo": "Puedes explorar más código en [[github_url]] o escribirme directamente por [[email_url]] si deseas colaborar en algún proyecto. Este portafolio también está disponible en [[switch_locale]]",
+  "mail": "correo"
 }

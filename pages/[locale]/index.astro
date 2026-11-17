@@ -1,10 +1,13 @@
 ---
 import Experiences from '@/components/experiences.astro'
+import FluidCursor from '@/components/fluid-cursor.astro'
 import Hero from '@/components/hero.astro'
 import Recents from '@/components/recents.astro'
 import { LANGUAGES } from '@/const'
+import { getJsonLd, seoConfig } from '@/const/seo'
 import Root from '@/layouts/root.astro'
 import { t } from '@/translations'
+import { getNode } from 'slugtree'
 
 export function getStaticPaths() {
   return LANGUAGES.map((locale) => ({ params: { locale } }))
@@ -14,6 +17,38 @@ const { locale } = Astro.params as { locale: 'es' | 'en' }
 const title = t('seo.title', Astro.url)
 const description = t('seo.description', Astro.url)
 const keywords = t('seo.keywords', Astro.url)
+
+const folder = getNode([locale])
+const projects =
+  folder?.type === 'folder'
+    ? folder.children
+        .filter((item) => item.type !== 'label')
+        .map((item) => {
+          const rawHref = String(item.site ?? item.href ?? '')
+          const isExternal = /^https?:\/\//i.test(rawHref)
+          const normalizedUrl = isExternal
+            ? rawHref
+            : new URL(
+                rawHref.endsWith('/') ? rawHref : `${rawHref}/`,
+                seoConfig.url
+              ).toString()
+
+          return {
+            title: item.title,
+            description: item.description,
+            url: normalizedUrl
+          }
+        })
+    : []
+
+const canonicalURL = new URL(`/${locale}/`, seoConfig.url).toString()
+const jsonLd = getJsonLd({
+  url: canonicalURL,
+  title,
+  description,
+  locale,
+  projects
+})
 ---
 
 <Root
@@ -21,7 +56,13 @@ const keywords = t('seo.keywords', Astro.url)
   title={title}
   description={description}
   keywords={keywords}
+  ogType="profile"
+  isHome={true}
+  jsonLd={jsonLd}
 >
+  <div class="opacity-30 pointer-events-none">
+    <FluidCursor />
+  </div>
   <Hero />
   <Experiences />
   <Recents />

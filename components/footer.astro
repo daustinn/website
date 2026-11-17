@@ -1,9 +1,12 @@
 ---
 import { DAUSTINN } from '@/const'
+import { t, getLocaleByUrl, toggleLocale } from '@/translations'
 import updatedRaw from '@/UPDATED?raw'
-import { t, getLocaleByUrl } from '@/translations'
 const date = new Date(updatedRaw)
+
 const locale = getLocaleByUrl(Astro.url)
+const nextLocale = locale === 'es' ? 'en' : 'es'
+
 const formatted = date.toLocaleDateString(locale, {
   month: 'short',
   day: 'numeric',
@@ -11,60 +14,56 @@ const formatted = date.toLocaleDateString(locale, {
 })
 ---
 
-<footer class="border-t">
-  <p
-    class="text-center opacity-60 uppercase font-mono text-xs font-semibold pt-5"
-  >
+<footer aria-labelledby="more-heading" class="container lg:pt-40 py-30">
+  <h2 id="more-heading" class="font-medium text-xl">
+    {t('more', Astro.url)}
+  </h2>
+  <p class="pt-5">
+    {
+      t('moreInfo', Astro.url)
+        .split(' ')
+        .map((word) => {
+          const cleanedWord = word.replaceAll('[[', '').replaceAll(']]', '')
+          const isSwitchLocale = cleanedWord === 'switch_locale'
+          const isToken = word.includes('[[')
+
+          const href = cleanedWord
+            .replace('github_url', DAUSTINN.githubURL)
+            .replace('email_url', `mailto:${DAUSTINN.mail}`)
+            .replace('switch_locale', toggleLocale(Astro.url))
+          const isExternal = href.startsWith('https')
+
+          return (
+            <span>
+              {isToken ? (
+                <a
+                  href={href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                  hreflang={isSwitchLocale ? nextLocale : undefined}
+                  lang={isSwitchLocale ? nextLocale : undefined}
+                  data-toggle-locale={isSwitchLocale ? nextLocale : undefined}
+                  class="underline"
+                >
+                  {cleanedWord
+                    .replace('github_url', 'GitHub')
+                    .replace('email_url', t('mail', Astro.url))
+                    .replace(
+                      'switch_locale',
+                      locale === 'es' ? 'inglés' : 'Spanish'
+                    )}
+                </a>
+              ) : (
+                word
+              )}{' '}
+            </span>
+          )
+        })
+    }
+  </p>
+  <p class="pt-20 opacity-60">
     {t('updated-on', Astro.url)}{' '}<time datetime={date.toISOString()}
       >{formatted}</time
     >
   </p>
-  <nav
-    aria-label="Footer navigation"
-    class="grid grid-cols-2 md:flex container text-xs font-semibold [&>a]:hover:underline [&>a]:opacity-60 [&>a]:hover:opacity-100 [&>a]:w-full text-center [&>a]:py-5"
-  >
-    <a href={`mailto:${DAUSTINN.mail}`} aria-label="Send an email to Daustinn">
-      MAIL
-    </a>
-    <a
-      href={DAUSTINN.githubURL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="GitHub profile"
-    >
-      GITHUB
-    </a>
-    <a
-      href={DAUSTINN.xURL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="X (Twitter) profile"
-    >
-      X
-    </a>
-    <a
-      href={DAUSTINN.linkedinURL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="LinkedIn profile"
-    >
-      LINKEDIN
-    </a>
-    <a
-      href={DAUSTINN.sourceCodeURL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Website source code"
-    >
-      SOURCE CODE
-    </a>
-    <a
-      href={DAUSTINN.bmc}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Buy Me a Coffee"
-    >
-      BMC
-    </a>
-  </nav>
 </footer>

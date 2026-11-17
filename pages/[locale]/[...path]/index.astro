@@ -8,33 +8,45 @@ import { createHighlighter } from 'shiki'
 import { getArticleJsonLd, seoConfig } from '@/const/seo'
 
 export const getStaticPaths = () =>
-  getSlugs().map((slug) => ({
-    params: {
-      locale: slug[0],
-      path: slug.slice(1).join('/')
-    },
-    props: { slug }
-  }))
+  getSlugs()
+    .filter((slug) => {
+      if (slug.length <= 1) return false
+      const node = getNodeData(slug)
+      return !node?.frontMatter.href && Boolean(node?.rawContent?.trim())
+    })
+    .map((slug) => ({
+      params: {
+        locale: slug[0],
+        path: slug.slice(1).join('/')
+      },
+      props: { slug }
+    }))
 
 const { slug } = Astro.props
 
 const data = getNodeData(slug)
 
 const locale = (slug[0] as 'en' | 'es') ?? 'en'
-const title = data?.frontMatter.title
-  ? `${data.frontMatter.title} — ${seoConfig.author}`
+const projectTitle = data?.frontMatter.title
+const title = projectTitle
+  ? `${projectTitle} — ${seoConfig.author}`
   : seoConfig.defaultTitle
-const description = data?.frontMatter.description ?? seoConfig.defaultDescription
+const description =
+  data?.frontMatter.description ?? seoConfig.defaultDescription
 const keywords = data?.frontMatter.keywords as string | undefined
 const ogImage = data?.frontMatter.image as string | undefined
+const site = data?.frontMatter.site ? String(data.frontMatter.site) : undefined
 
-const canonicalURL = new URL(Astro.url.pathname, seoConfig.url).toString()
+const normalizedPath = `/${slug.join('/')}/`
+const canonicalURL = new URL(normalizedPath, seoConfig.url).toString()
 const jsonLd = getArticleJsonLd({
   url: canonicalURL,
   title,
+  projectTitle,
   description,
   locale,
-  image: ogImage
+  image: ogImage,
+  site
 })
 
 const highlighter = await createHighlighter({
@@ -47,15 +59,30 @@ const renderer = new marked.Renderer()
 renderer.code = ({ text, lang }) => {
   const language = lang || 'text'
 
-  const html = highlighter.codeToHtml(text, {
+  return highlighter.codeToHtml(text, {
     lang: language,
     theme: 'andromeeda'
   })
+}
 
-  return html
+renderer.image = ({ href, title: imgTitle, text }) => {
+  const titleAttr = imgTitle ? ` title="${imgTitle}"` : ''
+  return `<img src="${href}" alt="${text}"${titleAttr} loading="lazy" decoding="async" />`
+}
+
+renderer.link = ({ href, title: linkTitle, tokens }) => {
+  const text = renderer.parser.parseInline(tokens)
+  const titleAttr = linkTitle ? ` title="${linkTitle}"` : ''
+  const isExternal = /^https?:\/\//i.test(href)
+  const externalAttrs = isExternal
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : ''
+  return `<a href="${href}"${titleAttr}${externalAttrs}>${text}</a>`
 }
 
 const html = data ? await marked.parse(data.rawContent, { renderer }) : ''
+const navLabel =
+  locale === 'es' ? 'Navegación secundaria' : 'Secondary navigation'
 ---
 
 <Root
@@ -67,36 +94,40 @@ const html = data ? await marked.parse(data.rawContent, { renderer }) : ''
   ogType="article"
   jsonLd={jsonLd}
 >
-  <nav class="border-t pt-5 mt-6">
+  <nav class="border-t pt-5 mt-6" aria-label={navLabel}>
     <div class="container">
-      <button
+      <a
         id="back-button"
-        class="flex text-sm items-center font-semibold gap-2 hover:bg-white/80 rounded-lg px-3 py-1"
+        href={`/${locale}/`}
+        class="flex w-fit text-sm items-center font-semibold gap-2 hover:bg-white/80 rounded-lg px-3 py-1"
       >
-        <ArrowBack width={18} />
+        <ArrowBack width={18} aria-hidden="true" />
         {t('back', Astro.url)}
-      </button>
+      </a>
     </div>
   </nav>
-  <main class="container">
+  <article class="container">
     <header class="py-10 text-center space-y-2">
-      <h2 class="font-young-serif text-4xl font-medium">
-        {data?.frontMatter.title}
-      </h2>
+      <h1 class="font-young-serif text-4xl font-medium">
+        {projectTitle}
+      </h1>
       <p class="text-base max-w-[70%] mx-auto text-center text-balance">
         {data?.frontMatter.description}
       </p>
       {
-        data?.frontMatter.site && (
+        site && (
           <a
-            href={String(data?.frontMatter.site)}
+            href={site}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-block mt-4! hover:scale-105 transition-[scale] text-sm rounded-2xl py-4 font-semibold bg-foreground text-background px-3"
           >
-            {t('try', Astro.url)} {data?.frontMatter.title}{' '}
-            {t('now', Astro.url)}
-            <ArrowBack width={20} class="rotate-125 ml-2 inline-block" />
+            {t('try', Astro.url)} {projectTitle} {t('now', Astro.url)}
+            <ArrowBack
+              width={20}
+              class="rotate-125 ml-2 inline-block"
+              aria-hidden="true"
+            />
           </a>
         )
       }
@@ -105,7 +136,10 @@ const html = data ? await marked.parse(data.rawContent, { renderer }) : ''
           <div class="overflow-hidden mt-5 border shadow-sm rounded-2xl">
             <img
               src={String(data?.frontMatter.image)}
-              alt={data.frontMatter.title}
+              alt={projectTitle ?? ''}
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
               class="w-full h-full object-cover"
             />
           </div>
@@ -113,13 +147,20 @@ const html = data ? await marked.parse(data.rawContent, { renderer }) : ''
       }
     </header>
     <section class="mb-10 prose__content" set:html={html} />
-  </main>
+  </article>
 </Root>
 
 <script>
   import { $ } from '@/lib/dom'
 
-  $('#back-button')?.addEventListener('click', () => {
-    history.back()
+  $('#back-button')?.addEventListener('click', (event) => {
+    if (
+      document.referrer &&
+      new URL(document.referrer).origin === window.location.origin &&
+      window.history.length > 1
+    ) {
+      event.preventDefault()
+      history.back()
+    }
   })
 </script>
