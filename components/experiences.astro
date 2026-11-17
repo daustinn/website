@@ -3,20 +3,28 @@ import { t } from '@/translations'
 const experiences = Object.values(t('experience.items', Astro.url))
 ---
 
-<section class="container pt-10">
-  <h2 class="font-medium md:pl-10 text-sm opacity-50 font-young-serif">
+<section
+  id="experience"
+  aria-labelledby="experience-heading"
+  class="container lg:pt-40 pt-30"
+>
+  <h2 id="experience-heading" class="font-medium text-xl">
     {t('experience.title', Astro.url)}
   </h2>
-  <ul class="pt-2 md:pl-10">
+  <ul class="pt-5 flex flex-col gap-4">
     {
       experiences.map((value) => {
         return (
           <li class="group py-2">
-            <span class="block font-bold">
-              {value.businessName},{' '}
-              <time class="text-sm opacity-60 font-mono">{value.from}</time>
-            </span>
-            <p class="text-sm block opacity-80 py-1">{value.role}</p>
+            <h3 class="block font-semibold">
+              {value.businessName} -{' '}
+              <time datetime={value.dateTime} class="opacity-60">
+                {value.from}
+              </time>
+            </h3>
+            <p class="block py-1 lg:text-balance">
+              {value.role} - <span class="opacity-60">{value.description}</span>
+            </p>
           </li>
         )
       })

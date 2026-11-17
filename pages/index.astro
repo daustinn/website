@@ -1,15 +1,20 @@
 ---
+import { seoConfig } from '@/const/seo'
 import Root from '@/layouts/root.astro'
 
 export const prerender = true
 ---
 
-<Root locale="en">
+<Root locale="en" robots="noindex, follow" canonical={`${seoConfig.url}/en/`}>
+  <Fragment slot="head">
+    <noscript>
+      <meta http-equiv="refresh" content="0;url=/en/" />
+    </noscript>
+  </Fragment>
   <noscript>
-    <meta http-equiv="refresh" content="0;url=/en" />
     <p class="p-6 text-center">
-      Redirecting to <a href="/en" class="underline">English</a> or <a
-        href="/es"
+      Redirecting to <a href="/en/" class="underline">English</a> or <a
+        href="/es/"
         class="underline">Español</a
       >...
     </p>
@@ -20,12 +25,12 @@ export const prerender = true
     const stored = localStorage.getItem(LOCALE_KEY)
 
     if (stored && LANGUAGES.includes(stored as (typeof LANGUAGES)[number])) {
-      window.location.replace(`/${stored}`)
+      window.location.replace(`/${stored}/`)
     } else {
       const lang = navigator.language || navigator.languages?.[0] || 'en'
       const locale = lang.toLowerCase().startsWith('es') ? 'es' : 'en'
       localStorage.setItem(LOCALE_KEY, locale)
-      window.location.replace(`/${locale}`)
+      window.location.replace(`/${locale}/`)
     }
   </script>
 </Root>

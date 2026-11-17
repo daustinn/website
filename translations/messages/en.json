@@ -1,79 +1,63 @@
 {
   "seo": {
-    "title": "Daustinn (David Bendezú) — Software Developer",
-    "description": "Software developer based in Ayacucho, Peru. I turn ideas into products with a focus on quality and user experience.",
-    "keywords": "David Bendezú, Daustinn, Software Developer, Web Developer, Ayacucho Peru, Full Stack Developer, React, Astro, TypeScript, Cloudflare"
+    "title": "Daustinn (David Bendezú) — Software Developer | Systems Engineering Background",
+    "description": "David Bendezú (Daustinn) — Software Developer with a Systems Engineering background. Designing and building web applications, cloud architectures, and open-source developer tools.",
+    "keywords": "David Bendezú, Daustinn, Software Developer, Systems Engineering, Web Developer, Full Stack Developer, Developer Tools, React, Astro, TypeScript, Node.js, Cloudflare"
   },
-  "role": "Software Developer",
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "work": "Selected Work",
+    "contact": "Contact"
+  },
+  "role": "Software Developer | Systems Engineering Background",
   "greeting": "What's up?",
-  "gretting-meta": "I turn ideas into products, with a focus on quality and user experience.",
+  "gretting-meta": "I'm David, and I design and build web applications, backend services, and open-source tools — focusing on clean engineering, reliability, and a straightforward user experience.",
+  "about": {
+    "label": "About",
+    "bio": "With a background in Systems Engineering, I work across the full stack — from designing databases and cloud infrastructure to building focused developer tools and responsive interfaces."
+  },
   "experience": {
     "title": "Experience",
     "items": {
       "freelance": {
         "businessName": "Freelance",
-        "role": "Software Developer",
-        "from": "Dec 2025"
+        "role": "Independent Software Developer",
+        "description": "end-to-end product development, AI integrations, and open-source libraries, deployed across AWS, Google Cloud, Vercel, Railway, and Firebase.",
+        "from": "Dec 2025",
+        "dateTime": "2025-12"
       },
       "lp": {
         "businessName": "Grupo La Pontificia",
-        "role": "Software Developer & Devops",
-        "from": "Jun 2023"
+        "role": "Software Developer",
+        "description": "infrastructure and DevOps workflows, CI/CD pipelines, VPS and database administration, security hardening, and production maintenance.",
+        "from": "Jun 2023",
+        "dateTime": "2023-06"
       },
       "acropolis": {
         "businessName": "Nueva Acrópolis",
-        "role": "Freelance Full Stack Developer",
-        "from": "Apr 2022"
+        "role": "Full-Stack Developer",
+        "description": "web application development with React, TypeScript, Vite, and Supabase, covering database modeling and production deployments on Vercel.",
+        "from": "Apr 2022",
+        "dateTime": "2022-04"
       }
     }
   },
-  "projects": {
-    "title": "Projects",
-    "items": {
-      "queryeditor": {
-        "title": "QueryEditor",
-        "description": "SQL client for easily and simply managing databases.",
-        "url": "/queryeditor",
-        "photoURL": "/queryeditor.png"
-      },
-      "slugtree": {
-        "title": "slugtree",
-        "description": "Library that generates a content tree from MDX files.",
-        "url": "/slugtree",
-        "photoURL": "/slugtree.png"
-      },
-      "react-callback-hooks": {
-        "title": "react-callback-hooks",
-        "description": "React hooks that react to events with callbacks.",
-        "url": "/react-callback-hooks",
-        "photoURL": "/react-callback-hooks.png"
-      },
-      "anni": {
-        "title": "Anni",
-        "description": "Simple, beautiful, and easy-to-use notification system",
-        "url": "/anni",
-        "photoURL": null
-      },
-      "graph-peru": {
-        "title": "graph-peru",
-        "description": "Rest API and GraphQL to get data from RENIEC and SUNAT.",
-        "url": "/graph-peru",
-        "photoURL": null
-      },
-      "zen-macify": {
-        "title": "zen-macify",
-        "description": "A CSS mod for Zen Browser (Windows)",
-        "url": "https://github.com/daustinn/zen-macify",
-        "photoURL": null
-      }
-    }
+  "contact": {
+    "title": "Get in touch.",
+    "subtitle": "If you have a project in mind or would like to collaborate, feel free to write directly.",
+    "quickLinks": "Quick links",
+    "social": "Social"
   },
   "updated-on": "Updated on",
   "see-more": "See more",
-  "learn-more": "Learn more",
+  "learn-more": "Read more",
   "things-i-have-done-recently": "Things I've done recently",
-  "work": "Work",
+  "projects": "Projects",
   "try": "Try",
   "now": "now",
-  "back": "Back"
+  "back": "Back",
+  "more": "More",
+  "moreInfo": "Explore additional work on [[github_url]] or reach out directly via [[email_url]] if you would like to collaborate. This portfolio is also available in [[switch_locale]]",
+  "mail": "email"
 }
