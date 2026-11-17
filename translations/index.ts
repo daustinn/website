@@ -35,7 +35,11 @@ export const getLocaleByUrl = (url: URL) => {
 export const toggleLocale = (url: URL) => {
   const currentLocale = getLocaleByUrl(url)
   const newLocale = currentLocale === 'es' ? 'en' : 'es'
-  return url.pathname.replace(`/${currentLocale}`, `/${newLocale}`)
+  const swapped = url.pathname.replace(
+    new RegExp(`^/${currentLocale}(?=/|$)`),
+    `/${newLocale}`
+  )
+  return swapped.endsWith('/') ? swapped : `${swapped}/`
 }
 
 export const href = (url: URL, to: string) => {
